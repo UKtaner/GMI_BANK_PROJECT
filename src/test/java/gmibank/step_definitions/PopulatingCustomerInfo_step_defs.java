@@ -54,6 +54,5 @@ public class PopulatingCustomerInfo_step_defs {
     public void close_the_application() {
         Driver.closeDriver();
 
-        System.out.println();
     }
 }
