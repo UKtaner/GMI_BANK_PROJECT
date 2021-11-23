@@ -18,6 +18,7 @@ import org.junit.runner.RunWith;
         glue = "step_definitions",
         tags = "@registration_info",
         dryRun = true
+
 )
 
 public class Runner {
