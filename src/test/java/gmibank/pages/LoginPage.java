@@ -28,5 +28,18 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id=\"login-page\"]/div/form/div[3]/button[2]")
     public WebElement signIn_btn;
 
+    @FindBy(xpath = "//span[.='My Operations']")
+    public WebElement myOperations;
+
+    @FindBy(xpath = "//span[.='Manage Customers']")
+    public WebElement manageCustomers;
+
+    @FindBy(xpath = "//span[.='Sign in']")
+    public WebElement firstSignIn;
+
+    @FindBy(xpath = "(//a[@href='#'])[2]")
+    public WebElement icon;
+
+
 
 }
