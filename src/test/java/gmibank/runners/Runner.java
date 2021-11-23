@@ -16,13 +16,9 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = "step_definitions",
-<<<<<<< HEAD
         tags = "@customer_creation_by_employee",
         dryRun = false
-=======
-        tags = "@registration_info",
-        dryRun = true
->>>>>>> master
+
 )
 public class Runner {
 }
