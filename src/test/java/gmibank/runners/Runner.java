@@ -19,5 +19,6 @@ import org.junit.runner.RunWith;
         tags = "@registration_info",
         dryRun = true
 )
+
 public class Runner {
 }
