@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage {
 
+
     public RegistrationPage(){
         PageFactory.initElements(Driver.getDriver(), this);
 
@@ -42,6 +43,7 @@ public class RegistrationPage {
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement ssnErrorMessage;
+
 
 
 }
