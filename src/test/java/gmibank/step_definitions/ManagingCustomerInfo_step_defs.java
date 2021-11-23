@@ -1,16 +1,18 @@
 package gmibank.step_definitions;
 
 import gmibank.pages.CustomersPage;
+import gmibank.pages.EditCustomerPage;
 import gmibank.pages.LoginPage;
 import gmibank.utilities.ConfigReader;
 import gmibank.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
-public class PopulatingCustomerInfo_step_defs {
+public class ManagingCustomerInfo_step_defs {
 
     LoginPage loginPage = new LoginPage();
     CustomersPage customersPage = new CustomersPage();
+    EditCustomerPage editCustomerPage = new EditCustomerPage();
 
     @Given("user is on the main page")
     public void user_is_on_the_main_page() {
@@ -55,4 +57,27 @@ public class PopulatingCustomerInfo_step_defs {
         Driver.closeDriver();
 
     }
+    @When("user clicks on view button")
+    public void user_clicks_on_view_button() {
+        customersPage.viewButton.click();
+
+    }
+    @Then("verify the edit button is displayed")
+    public void verify_the_edit_button_is_displayed() {
+        boolean view = customersPage.editButton.isDisplayed();
+        Assert.assertTrue(view);
+
+    }
+    @When("user clicks on edit button")
+    public void user_clicks_on_edit_button() {
+        customersPage.editButton.click();
+
+    }
+    @Then("verify the Create or edit a Customer is displayed")
+    public void verify_the_create_or_edit_a_customer_is_displayed() {
+        Assert.assertEquals(editCustomerPage.editCustomerHeader.getText(), "Create or edit a Customer");
+
+    }
+
+
 }
