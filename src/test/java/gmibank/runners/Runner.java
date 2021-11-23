@@ -16,9 +16,10 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "step_definitions",
-        tags = "@date_creation",
+        tags = "@registration_info",
         dryRun = false
 
 )
 public class Runner {
+
 }
