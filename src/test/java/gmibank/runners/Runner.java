@@ -15,8 +15,8 @@ import org.junit.runner.RunWith;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         features = "src/test/resources/features",
-        glue = "step_definitions",
-        tags = "@registration_info",
+        glue = "gmibank/step_definitions",
+        tags = "@ssn_test_invalid",
 
         dryRun = false
 
