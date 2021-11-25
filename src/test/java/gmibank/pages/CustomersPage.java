@@ -25,6 +25,9 @@ public class CustomersPage {
     @FindBy(xpath = "(//span[.='Delete'])[2]")
     public WebElement deleteButton;
 
+    @FindBy(id = "jh-create-entity")
+    public WebElement createANewCustomerButton;
+
 }
 
 //

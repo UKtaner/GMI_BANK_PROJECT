@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage {
 
+
     public RegistrationPage(){
         PageFactory.initElements(Driver.getDriver(), this);
 
@@ -16,28 +17,33 @@ public class RegistrationPage {
     @FindBy(xpath = "(//a[@class='dropdown-toggle nav-link'])[2]")
     public WebElement menuDropDown;
 
-    //? Register buttonunu sor
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement registerButton;
 
     @FindBy(id = "ssn")
-    public WebElement ssnBox;
+    public WebElement ssnTextBox;
 
     @FindBy(id = "firstname")
-    public WebElement firstNameBox;
+    public WebElement firstNameTextBox;
 
     @FindBy(id = "lastname")
-    public WebElement lastNameBox;
+    public WebElement lastNameTextBox;
 
     @FindBy(xpath = "//input[@name='address']")
-    public WebElement addressBox;
+    public WebElement addressTextBox;
 
-    @FindBy(id = "mobilephone")
-    public WebElement phoneNumberBox;
+    @FindBy(id = "mobilPhone")
+    public WebElement phoneNumberTextBox;
 
     @FindBy(id = "username")
-    public WebElement userNameBox;
+    public WebElement userNameTextBox;
 
     @FindBy(id = "email")
-    public WebElement emailBox;
+    public WebElement emailTextBox;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement ssnErrorMessage;
+
 
 
 }
