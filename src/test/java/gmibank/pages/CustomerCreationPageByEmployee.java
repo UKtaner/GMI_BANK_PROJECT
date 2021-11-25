@@ -71,4 +71,7 @@ public class CustomerCreationPageByEmployee {
     @FindBy(name = "mobilePhoneNumber")
     public WebElement mobilePhoneNumber;
 
+    @FindBy(name = "address")
+    public WebElement addressBox;
+
 }
