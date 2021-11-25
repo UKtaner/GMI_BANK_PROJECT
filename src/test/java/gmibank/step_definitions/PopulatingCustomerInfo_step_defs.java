@@ -29,11 +29,11 @@ public class PopulatingCustomerInfo_step_defs {
         loginPage.password_field.sendKeys("Team3employee.");
 
     }
-    @When("user clicks on the sign in button")
-    public void user_clicks_on_the_sign_in_button() {
-        loginPage.signIn_btn.click();
-
-    }
+//    @When("user clicks on the sign in button")
+//    public void user_clicks_on_the_sign_in_button() {
+//        loginPage.signIn_btn.click();
+//
+//    }
     @Then("user goes to My Operations dropdown")
     public void user_goes_to_my_operations_dropdown() {
         loginPage.myOperations.click();
