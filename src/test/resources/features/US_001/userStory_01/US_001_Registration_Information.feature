@@ -1,12 +1,9 @@
-#1-Given user navigate to webpage
-#2-And user navigates to menu dropdown and click
-#3-And user select  Register button
-#4-And user goes to SSN box and enters  9 digits  number
+
 
 @background
 Feature: US_001_Registration_Information
 
-Background: user goes to GMI bank webpage
+Background: user_goes_to GMI_bank_webpage_and_goes_dropdown_menu_and_select_register_button
 Given user navigate to webpage
 And user navigates to menu dropdown and click
 And user select  Register button
