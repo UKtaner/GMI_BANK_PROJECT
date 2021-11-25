@@ -61,6 +61,23 @@ public class CustomerCreationPageByEmployee {
 
 
 
+    //Osman-stars
+    @FindBy(name = "firstName")
+    public WebElement firstNameBox;
 
+    @FindBy(name = "lastName")
+    public WebElement lastNameBox;
+
+    @FindBy(name = "email")
+    public WebElement emailBox;
+
+    @FindBy(name = "address")
+    public WebElement address;
+
+    @FindBy(name = "mobilePhoneNumber")
+    public WebElement mobilePhoneNumber;
+
+    @FindBy(name = "address")
+    public WebElement addressBox;
 
 }
