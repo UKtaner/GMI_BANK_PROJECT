@@ -33,6 +33,12 @@ public class CustomerCreationPageByEmployee {
     @FindBy(xpath = "//input[@name='createDate']")
     public WebElement createDateTextBox;
 
+    @FindBy(xpath="//*[@value='2021-11-24T00:00']")
+    public WebElement timeOccurence;
+
+    @FindBy(xpath = "//*[@class='form-control is-touched is-dirty is-bad-input av-invalid is-invalid form-control']")
+    public WebElement dateCreateError;
+
     @FindBy(xpath = "//select[@name='country.id']")
     public WebElement countryIdDropDown;
 
