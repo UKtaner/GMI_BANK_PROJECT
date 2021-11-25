@@ -16,8 +16,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
-        tags = "@create_a_new_customer",
-
+        tags = "@ssn_test_invalid",
         dryRun = false
 )
 

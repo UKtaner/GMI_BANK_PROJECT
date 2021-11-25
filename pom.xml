@@ -66,6 +66,12 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>9.5.0.jre17-preview</version>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
 
     </dependencies>
