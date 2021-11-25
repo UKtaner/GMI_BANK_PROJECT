@@ -188,5 +188,14 @@ public class ReusableMethods {
         return select.getFirstSelectedOption();
     }
 
+    public static void selectAnItemFromDropdown(WebElement item, String selectableItem){
 
+        Select select = new Select(item);
+        for (int i =0;i<select.getOptions().size();i++){
+            if(select.getOptions().get(i).getText().equalsIgnoreCase(selectableItem)){
+                select.getOptions().get(i).click();
+                break;
+            }
+        }
+    }
 }
