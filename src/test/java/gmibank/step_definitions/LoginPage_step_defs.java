@@ -19,22 +19,27 @@ public class LoginPage_step_defs {
         loginPage.firstSignIn.click();
 
     }
+
     @Given("user enters user id {string}")
     public void user_enters_user_id(String string) {
         loginPage.username_field.sendKeys(string);
     }
+
     @Given("user enters user password {string}")
     public void user_enters_user_password(String string) {
         loginPage.password_field.sendKeys(string);
     }
+
     @When("user clicks on the Sign in button")
     public void user_clicks_on_the_sign_in_button() {
         loginPage.signIn_Btn.click();
     }
+
     @Then("user goes to user login page")
     public void user_goes_to_user_login_page() {
         Assert.assertTrue(loginPage.loginId.getText().contains("Ali Can"));
     }
+
     @Then("close the connection")
     public void close_the_connection() {
         Driver.closeDriver();
@@ -50,7 +55,7 @@ public class LoginPage_step_defs {
     public void userSeeErrorMessage() {
         ReusableMethods.waitFor(3);
         System.out.println(loginPage.errorMessage.getText());
-        Assert.assertEquals(loginPage.errorMessage.getText(),"Failed to sign in!");
+        Assert.assertEquals(loginPage.errorMessage.getText(), "Failed to sign in!");
 
     }
 
@@ -78,13 +83,14 @@ public class LoginPage_step_defs {
         loginPage.register_btn.click();
         loginPage.register_btn.click();
 
-        
+
     }
 
     @Then("user navigate to registration page")
     public void userNavigateToRegistrationPage() {
         System.out.println(loginPage.registrationVerifyText.getText());
-        Assert.assertEquals(loginPage.registrationVerifyText.getText(),"Registration");
+        Assert.assertEquals(loginPage.registrationVerifyText.getText(), "Registration");
 
     }
 }
+
