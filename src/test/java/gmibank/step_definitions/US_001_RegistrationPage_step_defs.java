@@ -46,7 +46,11 @@
 //    }
 //    @Then("user should not see any error message at firstname box")
 //    public void user_should_not_see_any_error_message_at_firstname_box() {
+
+//       // Assert.assertTrue();
+
 //       // Assert.assertTrue();????
+
 //
 //
 //    }
@@ -57,7 +61,7 @@
 //    }
 //    @Then("user should not see any error message at lastname box")
 //    public void user_should_not_see_any_error_message_at_lastname_box() {
-//        //??
+
 //    }
 //    @Given("user enters a valid address")
 //    public void user_enters_a_valid_address() throws InterruptedException {
@@ -66,7 +70,7 @@
 //    }
 //    @Then("user should see an error message at address box")
 //    public void user_should_see_an_error_message_at_address_box() {
-//       //??
+
 //    }
 //    @Given("user enters phone number")
 //    public void user_enters_phone_number() throws InterruptedException {
@@ -75,7 +79,7 @@
 //    }
 //    @Then("user should see an error message at Phone Number box")
 //    public void user_should_see_an_error_message_at_phone_number_box() {
-//       //?
+
 //    }
 //    @Given("user enters Username")
 //    public void user_enters_username() throws InterruptedException {
@@ -84,7 +88,8 @@
 //    }
 //    @Then("user should see an error message at Username box")
 //    public void user_should_see_an_error_message_at_username_box() {
-//             //?
+
+
 //    }
 //    @Given("user enters Email address")
 //    public void user_enters_email_address() throws InterruptedException {
@@ -93,11 +98,14 @@
 //    }
 //    @Then("verify user should not see an error message")
 //    public void verify_user_should_not_see_an_error_message() {
-//         //?
+
+
+
 //    }
-//
-//
-//
+
+
+
+
 
 
 
