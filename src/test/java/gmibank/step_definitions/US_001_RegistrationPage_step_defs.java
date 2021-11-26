@@ -5,13 +5,16 @@ package gmibank.step_definitions;
 import gmibank.pages.RegistrationPage;
 import gmibank.utilities.ConfigReader;
 import gmibank.utilities.Driver;
-import io.cucumber.java.en.And;
+
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
+
 import org.openqa.selenium.Keys;
 
-import javax.crypto.KeyAgreementSpi;
+
+
+
 
 public class US_001_RegistrationPage_step_defs {
 
@@ -34,7 +37,8 @@ public class US_001_RegistrationPage_step_defs {
     }
     @Given("user goes to SSN text box and enters SSN number")
     public void user_goes_to_ssn_text_box_and_enters_ssn_number() {
-        registrationPage.ssnTextBox.sendKeys("123-45-6789"+Keys.ENTER);
+        registrationPage.ssnTextBox.click();
+        registrationPage.ssnTextBox.sendKeys("123-45-6789");
 
     }
     @Given("user enters first name")
@@ -94,6 +98,9 @@ public class US_001_RegistrationPage_step_defs {
     public void user_should_not_see_an_error_message() {
 
     }
+
+
+
 
 
 
