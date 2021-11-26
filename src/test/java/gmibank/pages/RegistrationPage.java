@@ -32,7 +32,7 @@ public class RegistrationPage {
     @FindBy(xpath = "//input[@name='address']")
     public WebElement addressTextBox;
 
-    @FindBy(id = "mobilPhone")
+    @FindBy(xpath = "//input[@name='mobilephone']")
     public WebElement phoneNumberTextBox;
 
     @FindBy(id = "username")
@@ -43,6 +43,12 @@ public class RegistrationPage {
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement ssnErrorMessage;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
+    public WebElement phoneNumberErrorMessage;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[7]")
+    public WebElement emailErrorMessage;
 
 
 

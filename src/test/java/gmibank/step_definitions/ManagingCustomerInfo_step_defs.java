@@ -40,11 +40,11 @@ public class ManagingCustomerInfo_step_defs {
         loginPage.password_field.sendKeys(ConfigReader.getProperty("employee_password"));
 
     }
-    @When("user clicks on the sign in button")
-    public void user_clicks_on_the_sign_in_button() {
-        loginPage.signIn_btn.click();
-
-    }
+//    @When("user clicks on the sign in button")
+//    public void user_clicks_on_the_sign_in_button() {
+//        loginPage.signIn_btn.click();
+//
+//    }
     @Then("user goes to My Operations dropdown")
     public void user_goes_to_my_operations_dropdown() {
         ReusableMethods.waitForClickablility(loginPage.myOperations,1).click();

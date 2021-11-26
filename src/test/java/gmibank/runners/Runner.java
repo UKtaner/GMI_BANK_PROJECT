@@ -14,10 +14,12 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
+
+
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
-        tags = "@customers_info",
-        dryRun = false
+        tags = "  @login_test2",
+        dryRun = true
 )
 
 public class Runner {
