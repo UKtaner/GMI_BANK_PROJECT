@@ -16,10 +16,12 @@ import org.junit.runner.RunWith;
         },
 
 
+
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
         tags = " @Customer's_Account_Management\n",
         dryRun = true
+
 )
 public class Runner {
 
