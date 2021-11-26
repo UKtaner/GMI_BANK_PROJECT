@@ -10,6 +10,7 @@ import gmibank.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 
@@ -86,7 +87,7 @@ public class US_001_RegistrationPage_step_defs {
     }
     @Then("user should see an error message at Username box")
     public void user_should_see_an_error_message_at_username_box() {
-        registrationPage.usernameErrorMessage.isDisplayed();
+        Assert.assertTrue(registrationPage.usernameErrorMessage.isDisplayed());
 
     }
     @Given("user enters Email")
@@ -98,10 +99,5 @@ public class US_001_RegistrationPage_step_defs {
     public void user_should_not_see_an_error_message() {
 
     }
-
-
-
-
-
 
 }
