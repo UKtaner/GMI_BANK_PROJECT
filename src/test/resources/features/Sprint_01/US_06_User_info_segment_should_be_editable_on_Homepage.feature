@@ -1,4 +1,4 @@
-@UserInfo
+@US_06_UserInfo
 Feature:User Info Functionality
 
   Background: User goes to login page

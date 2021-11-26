@@ -1,4 +1,4 @@
-@Email_Language
+@US_07_Email_Language_Check
   Feature: Email and Language Check
     Background: User goes to login page
       Given user is on the main page

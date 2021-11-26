@@ -17,9 +17,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
 
-        tags = "@US_10_TC_06_State_should_be_provided_as_US_state",
+        tags = "@US_06_UserInfo",
 
-        dryRun = true
+        dryRun = false
 
 )
 
