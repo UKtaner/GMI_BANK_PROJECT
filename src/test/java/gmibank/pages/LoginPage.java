@@ -11,23 +11,42 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(id="login-item")
+    public WebElement loginButton;
+
     @FindBy(id = "username")
     public WebElement username_field;
 
     @FindBy(id = "password")
     public WebElement password_field;
 
-    @FindBy(xpath = "//*[@id=\"login-page\"]/div/form/div[2]/div[3]/a")
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signIn_Btn;
+
+    @FindBy(xpath = "//*[.='Ali Can']")
+    public WebElement loginId;
+
+    @FindBy(xpath = "//*[.='Failed to sign in!']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "//span[contains(text(),'Cancel')]")
+    public WebElement cancelButton;
+
+    @FindBy(linkText = "Did you forget your password?")
     public WebElement forgetPassword_btn;
 
-    @FindBy(xpath = "//*[@id=\"login-page\"]/div/form/div[2]/div[4]/a")
+    @FindBy(id = "email")
+    public WebElement resetEmail;
+
+    @FindBy(xpath = "//span[contains(text(),'Reset password')]")
+    public WebElement resetPassword;
+
+
+    @FindBy(xpath ="//span[contains(text(),'Register a new account')]")
     public WebElement register_btn;
 
-    @FindBy(xpath = "//*[@id=\"login-page\"]/div/form/div[3]/button[1]")
-    public WebElement cancel_btn;
-
-    @FindBy(xpath = "//*[@id=\"login-page\"]/div/form/div[3]/button[2]")
-    public WebElement signIn_btn;
+    @FindBy(id = "register-title")
+    public WebElement registrationVerifyText;
 
     @FindBy(xpath = "//span[.='My Operations']")
     public WebElement myOperations;
@@ -47,6 +66,12 @@ public class LoginPage {
     @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu-right show']//a[1]")
     public WebElement userManagement;
 
+
+
+
+    //Osman
+    @FindBy(linkText = "My Accounts")
+    public WebElement myAccounts;
 
 
 
