@@ -14,15 +14,15 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
+
+
+
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
-
-        tags = "@US_10_TC_06_State_should_be_provided_as_US_state",
-
+        tags = " @Customer's_Account_Management\n",
         dryRun = true
 
 )
-
 public class Runner {
 
 }

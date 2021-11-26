@@ -14,8 +14,9 @@ public class US_010_AddressCanNotBeLeftBlank {
     CustomerCreationPageByEmployee customerCreationPageByEmployee;
     @Then("verify address box is not blank")
     public void verify_address_box_is_not_blank() {
-    String address = customerCreationPageByEmployee.address.getAttribute("value").trim();
-        Assert.assertTrue(address.length()>0);
+        customerCreationPageByEmployee = new CustomerCreationPageByEmployee();
+    String address = customerCreationPageByEmployee.address.getAttribute("value");
+    Assert.assertTrue(address.length()>0);
     }
 
     @Then("verify address box has letters and digits")
