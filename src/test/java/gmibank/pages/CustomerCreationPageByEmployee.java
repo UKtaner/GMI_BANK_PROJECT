@@ -11,7 +11,6 @@ public class CustomerCreationPageByEmployee {
 
         }
     //taner==>start
-    //SSN:234-56-7890
     @FindBy(id = "search-ssn")
     public WebElement ssnTextBox;
 
@@ -33,11 +32,8 @@ public class CustomerCreationPageByEmployee {
     @FindBy(xpath = "//input[@name='createDate']")
     public WebElement createDateTextBox;
 
-    @FindBy(xpath="//*[@value='2021-11-24T00:00']")
+    @FindBy(xpath="//*[@value='2021-11-25T00:00']")
     public WebElement timeOccurence;
-
-    @FindBy(xpath = "//*[@class='form-control is-touched is-dirty is-bad-input av-invalid is-invalid form-control']")
-    public WebElement dateCreateError;
 
     @FindBy(xpath = "//select[@name='country.id']")
     public WebElement countryIdDropDown;
@@ -51,12 +47,17 @@ public class CustomerCreationPageByEmployee {
     @FindBy(id = "tp-customer-account")
     public WebElement accountTypeTextBox;
 
+    @FindBy(xpath = "//*[@value='3976']")
+    public WebElement accountType;
+
     @FindBy(id = "tp-customer-zelleEnrolled")
     public WebElement zelleEnrolledButton;
 
     @FindBy(id = "save-entity")
     public WebElement saveButton;
 
+    @FindBy(xpath = "//*[contains(text(),'translation-not-found')]")
+    public WebElement successpopUp;
     //taner==>end
 
 

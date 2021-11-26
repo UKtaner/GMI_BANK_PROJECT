@@ -1,19 +1,7 @@
-<<<<<<< HEAD
+
 @customer_creation_by_employee
-
-
 Feature: Date_Creation_Functionality
 
-@date_creation
-    Scenario: TC_1101_date_cannot_be_typed_earlier
-        When user enters the date respectively
-        |day|month|year|hour|minute|
-        |24|11   |2021 |00  | 00   |
-        Then Than user verifies current time is displayed
-        Then take the screenshot
-=======
-@creation_by_employee_functionality
-Feature: Date_Creation_Functionality
 
   Background: Navigating_to_the_customer_creation_page
     Given user is on the main page
@@ -55,38 +43,52 @@ Feature: Date_Creation_Functionality
     Then verify state box is provided as US state
   |Alabama|  Alaska|  Arizona|  Arkansas|  California|Colorado|  Connecticut|Delaware|  Florida|  Georgia|Hawaii|  Idaho|  IllinoisIndiana|Iowa|  Kansas|Kentucky|  Louisiana|  Maine|  Maryland|  Massachusetts|  Michigan|Minnesota|  Mississippi|  Missouri|  MontanaNebraska|  Nevada|New Hampshire|  New Jersey|  New Mexico|  New York|  North Carolina|  North Dakota|Ohio|  Oklahoma|  Oregon|  Pennsylvania|Rhode Island|  South Carolina|  South Dakota|  Tennessee|Texas|  Utah|Vermont|  Virginia|  Washington|  West Virginia|  Wisconsin|  Wyoming|
 
+#taner==>start
+  @US_11_TC_01_Date_cannot_be_typed_earlier_in_the_past_at_the_time_of_creation_a_customer
+  Scenario: Date_cannot_be_typed_at_the_time_of_creation_a_customer
+    When user enters the date respectively
+      |day|month|year|hour|minute|
+      |25|11   |2021 |00  | 00   |
+    Then Than user verifies current time is displayed
+    Then take the screenshot
 
-
-
->>>>>>> master
-
-    Scenario: TC_1102_date_cannot_be_typed_earlier
+  @US_11_TC_02_Date_cannot_be_typed_earlier_in_the_past_at_the_time_of_creation_a_customer
+    Scenario: Date_cannot_be_typed_earlier_in_the_future
         When user enters "<year>" in the future
         Then user should see  an error "<outcome>" message
 
-<<<<<<< HEAD
-    Scenario: TC_1103_date_cannot_be_typed_earlier
-=======
-#    Given user provides  prerequisite  valid  credentials
-#    |ssn|middleName|phoneNumber|zipCode|city|country|state|
-#    |234-56-7890 |  Dain  |     123-456-7677| 2312      | london   |  UK       |   Abc  |
-#    And user clicks on the search button
-#    Then take the screenshot
-#
-#  @date_creation
-#    Scenario: TC_1101_Date_Creation
-#    Then Than user verifies current time is displayed
-#    Then take the screenshot
-#
-#
->>>>>>> master
-
+  @US_11_TC_03_Date_cannot_be_typed_earlier_in_the_past_at_the_time_of_creation_a_customer
+    Scenario: Date_cannot_be_typed_earlier_in_the_past
         When user enters "<year>" in the past
         Then user should see  an error "<outcome>" message
 
-    Scenario: TC_1104_date_should_be_created_respectively
+  @US_11_TC_04_Date_should_be_created_as_month_day_year_hour_and_minute.
+    Scenario: Date_should_be_created_as_day_month_year_hour_and_minute.
+      When user provides the date as day,month,year,hour and minute respectively.
+      Then user should see  an error "<outcome>" message
 
+  @US_11_TC_05_Date_should_be_created_as_month_day_year_hour_and_minute.
     Scenario: TC_1105_date_should_be_created_respectively
-        When user provides month,day,year,hour and minute from excel respectively.
-        Then user verify Create Date Box should not give any error message.
+        When user provides date as month,day,year,hour and minute respectively.
+#        Then user verify Create Date Box should not give any error message.
 
+  @US_11_TC_06_User_can_choose_a_user_from_the_registration_and_it_cannot_be_blank
+  Scenario: User_cannot_be_blank
+    When user clicks on the user dropdown and select a user
+    Then verify a user is selected
+
+  @US_11_TC_07_User_can_choose_an_account_created_on_manage_accounts
+  Scenario: User_can_select_a_created_account
+    When user clicks on the account dropdown and select an account
+
+  @US_11_TC_08_User_can_select_Zelle_Enrolled_optionally_and_save_it
+  Scenario: User_can_select_Zelle_Enrolled_button
+    When user is able to click on the Zelle Enrolled button
+    Then verify the user is able to click on Save button successfully
+
+  @US_11_TC_09_User_can_select_Zelle_Enrolled_optionally_and_save_it
+  Scenario: User_can_skip_Zelle_Enrolled_button
+    When user should not click on the Zelle Enrolled button
+    Then verify the user is able to click on Save button successfully
+
+#taner==>end

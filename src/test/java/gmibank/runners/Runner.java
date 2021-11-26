@@ -16,8 +16,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
-        tags = "@US_10_TC_06_State_should_be_provided_as_US_state",
-        dryRun = true
+        tags = " @TC_1105_Date_should_be_created_as_month_day_year_hour_and_minute.",
+        dryRun = false
 
 )
 
