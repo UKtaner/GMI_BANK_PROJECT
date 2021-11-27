@@ -32,7 +32,7 @@ And user select  Register button
     Given user enters phone number
     Then user should see an error message at Phone Number box
 
-
+@username
   Scenario: TC_06_user_should_enter_username
     Given user enters Username
     Then user should see an error message at Username box
