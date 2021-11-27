@@ -1,6 +1,7 @@
 package gmibank.step_definitions;
 
 import gmibank.pages.ManageAccountPage;
+import gmibank.utilities.ReusableMethods;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,14 +15,21 @@ public class US_13_ManageAccountPage {
     }
     @Given("user click “My Operations” and select “Manage Accounts”")
     public void user_click_my_operations_and_select_manage_accounts() {
+        ReusableMethods.waitFor(2);
+        manageAccountPage.myOperationsMenu.click();
+        ReusableMethods.waitFor(2);
+        manageAccountPage.manageAccountsMenu.click();
 
     }
     @Given("user Click “+Create a new Account” button")
     public void user_click_create_a_new_account_button() {
+        ReusableMethods.waitFor(2);
+        manageAccountPage.createNewAccountButton.click();
 
     }
     @When("User should not fill “description” area.")
     public void user_should_not_fill_description_area() {
+        manageAccountPage.descriptionBox.click();
 
     }
     @When("user enter {int} in “Balance” box")
@@ -63,7 +71,7 @@ public class US_13_ManageAccountPage {
 
 
     @When("User select account type as a “SAVING” from “account type” box")
-    public void user_select_account_type_as_a_savıng_from_account_type_box() {
+    public void user_select_account_type_as_a_saving_from_account_type_box() {
 
     }
 
@@ -75,7 +83,7 @@ public class US_13_ManageAccountPage {
     }
 
     @When("User select  as “ACTIVE” from “account status type” box")
-    public void user_select_as_actıve_from_account_status_type_box() {
+    public void user_select_as_active_from_account_status_type_box() {
 
     }
     @When("user click and select an employee from “Employee”dropdown")

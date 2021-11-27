@@ -29,4 +29,18 @@ public class ManageAccountPage {
     @FindBy (id="save-entity")
     public WebElement saveButton;
 
+    @FindBy (id="entity-menu")
+    public WebElement myOperationsMenu;
+
+    @FindBy (xpath="//*[contains(text(),'Manage Accounts')]")
+    public WebElement manageAccountsMenu;
+
+    @FindBy (id="jh-create-entity")
+    public WebElement createNewAccountButton;
+
+    @FindBy (xpath="(//*[contains(text(),'This field is required')])[1]")
+    public WebElement thisFieldRequiredMessageDescription;
+
+
+
 }

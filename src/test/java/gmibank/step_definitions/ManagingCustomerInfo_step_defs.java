@@ -5,6 +5,7 @@ import gmibank.pages.EditCustomerPage;
 import gmibank.pages.LoginPage;
 import gmibank.utilities.ConfigReader;
 import gmibank.utilities.Driver;
+import gmibank.utilities.ReusableMethods;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
@@ -23,22 +24,22 @@ public class ManagingCustomerInfo_step_defs {
     public void user_enters_employee_username() {
         loginPage.icon.click();
         loginPage.firstSignIn.click();
-        loginPage.username_field.sendKeys("team3employee");
+        loginPage.username_field.sendKeys(ConfigReader.getProperty("employee_username"));
 
     }
     @Given("user enters employee password")
     public void user_enters_employee_password() {
-        loginPage.password_field.sendKeys("Team3employee.");
+        loginPage.password_field.sendKeys(ConfigReader.getProperty("employee_password"));
 
     }
-    @When("user clicks on the sign in button")
-    public void user_clicks_on_the_sign_in_button() {
-        loginPage.signIn_btn.click();
-
-    }
+//    @When("user clicks on the sign in button")
+//    public void user_clicks_on_the_sign_in_button() {
+//        loginPage.signIn_btn.click();
+//
+//    }
     @Then("user goes to My Operations dropdown")
     public void user_goes_to_my_operations_dropdown() {
-        loginPage.myOperations.click();
+        ReusableMethods.waitForClickablility(loginPage.myOperations,1).click();
 
     }
     @Then("clicks on Manage Customers")
