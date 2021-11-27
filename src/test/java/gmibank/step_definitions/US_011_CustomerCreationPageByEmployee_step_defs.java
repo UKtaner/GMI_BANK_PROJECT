@@ -22,20 +22,16 @@ public class US_011_CustomerCreationPageByEmployee_step_defs {
 
 CustomerCreationPageByEmployee customerCreationPageByEmployee=new CustomerCreationPageByEmployee();
 Faker faker=new Faker();
+ExcelUtil excelUtil;
     @When("user enters the {string} respectively")
     public void user_enters_the_respectively(String date) {
-ExcelUtil excelUtil=new ExcelUtil("src/test/resources/testdata/date_info.xlsx",date);
+         excelUtil=new ExcelUtil("src/test/resources/testdata/date_info.xlsx",date);
         List<Map<String, String>> testData=excelUtil.getDataList();
         for(Map<String,String> appData : testData ) {
             Driver.getDriver().get(ConfigReader.getProperty("app_url"));
             customerCreationPageByEmployee.createDateTextBox.sendKeys(appData.get("dateTest"));
 
-        }
-
-
-
-
-
+         }
         }
 
 //        date=ConfigReader.getProperty("dateTest");

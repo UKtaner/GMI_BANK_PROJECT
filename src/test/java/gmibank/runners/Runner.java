@@ -14,16 +14,12 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
-<<<<<<< HEAD
-        features = "src/test/resources/features",
-        glue = "gmibank/step_definitions",
-        tags = " @US_11_TC_01_Date_cannot_be_typed_earlier_in_the_past_at_the_time_of_creation_a_customer",
-=======
+
 
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
         tags = "@username",
->>>>>>> master
+
         dryRun = false
 
 )
