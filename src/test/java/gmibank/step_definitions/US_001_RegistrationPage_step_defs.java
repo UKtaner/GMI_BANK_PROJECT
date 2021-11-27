@@ -10,11 +10,8 @@ import gmibank.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
-
-
-
-
 
 public class US_001_RegistrationPage_step_defs {
 
@@ -37,14 +34,14 @@ public class US_001_RegistrationPage_step_defs {
         registrationPage.registerButton.click();
 
     }
-<<<<<<< HEAD
+
 
     @Given("user goes to SSN box and enters number")
     public void user_goes_to_ssn_box_and_enters_number() throws InterruptedException {
-=======
+
     @Given("user goes to SSN text box and enters SSN number")
     public void user_goes_to_ssn_text_box_and_enters_ssn_number() {
->>>>>>> master
+
         registrationPage.ssnTextBox.click();
         registrationPage.ssnTextBox.sendKeys("123-45-6789");
 
@@ -57,11 +54,8 @@ public class US_001_RegistrationPage_step_defs {
 
     @Then("user should not see any error message at firstname box")
     public void user_should_not_see_any_error_message_at_firstname_box() {
-<<<<<<< HEAD
-        // Assert.assertTrue();
 
-=======
->>>>>>> master
+        // Assert.assertTrue();
 
     }
 
@@ -108,10 +102,10 @@ public class US_001_RegistrationPage_step_defs {
 
     @Then("user should see an error message at Username box")
     public void user_should_see_an_error_message_at_username_box() {
-        registrationPage.usernameErrorMessage.isDisplayed();
+        Assert.assertTrue(registrationPage.usernameErrorMessage.isDisplayed());
 
     }
-<<<<<<< HEAD
+
 
     @Given("user enters Email address")
     public void user_enters_email_address() throws InterruptedException {
@@ -123,7 +117,7 @@ public class US_001_RegistrationPage_step_defs {
     public void verify_user_should_not_see_an_error_message() {
 
     }
-=======
+
     @Given("user enters Email")
     public void user_enters_email() {
         registrationPage.emailTextBox.sendKeys("AliCan@gmail.com"+Keys.ENTER);
@@ -135,10 +129,5 @@ public class US_001_RegistrationPage_step_defs {
     }
 
 
-
-
-
-
->>>>>>> master
 }
 
