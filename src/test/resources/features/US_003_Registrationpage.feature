@@ -23,5 +23,6 @@ Then user send "*98jgjt"
 Then verify bar is yellow
 
 Scenario:  US_03_TC08_user_enter_new_password
-Then user send "Mypass9*"
+Then user send the "Mypass9*"
 Then verify bar is green
+
