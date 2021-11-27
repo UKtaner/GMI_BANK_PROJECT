@@ -16,8 +16,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
-        tags = " @Customer's_Account_Management\n",
-        dryRun = true
+        tags = " @US_11_TC_01_Date_cannot_be_typed_earlier_in_the_past_at_the_time_of_creation_a_customer",
+        dryRun = false
 
 )
 public class Runner {

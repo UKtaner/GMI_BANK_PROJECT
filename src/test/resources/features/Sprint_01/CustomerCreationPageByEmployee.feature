@@ -50,52 +50,42 @@ Feature: Date_Creation_Functionality
   |Alabama|  Alaska|  Arizona|  Arkansas|  California|Colorado|  Connecticut|Delaware|  Florida|  Georgia|Hawaii|  Idaho|  IllinoisIndiana|Iowa|  Kansas|Kentucky|  Louisiana|  Maine|  Maryland|  Massachusetts|  Michigan|Minnesota|  Mississippi|  Missouri|  MontanaNebraska|  Nevada|New Hampshire|  New Jersey|  New Mexico|  New York|  North Carolina|  North Dakota|Ohio|  Oklahoma|  Oregon|  Pennsylvania|Rhode Island|  South Carolina|  South Dakota|  Tennessee|Texas|  Utah|Vermont|  Virginia|  Washington|  West Virginia|  Wisconsin|  Wyoming|
     And close the application
 
-#taner==>start
   @US_11_TC_01_Date_cannot_be_typed_earlier_in_the_past_at_the_time_of_creation_a_customer
   Scenario: Date_cannot_be_typed_at_the_time_of_creation_a_customer
-    When user enters the date respectively
-      |day|month|year|hour|minute|
-      |25|11   |2021 |00  | 00   |
-    Then Than user verifies current time is displayed
-    Then take the screenshot
+    When user enters the "date" respectively
+    Then verify the data is accepted
 
   @US_11_TC_02_Date_cannot_be_typed_earlier_in_the_past_at_the_time_of_creation_a_customer
     Scenario: Date_cannot_be_typed_earlier_in_the_future
-        When user enters "<year>" in the future
-        Then user should see  an error "<outcome>" message
+        When user enters "year" in the future
+        Then user should see  an error outcome message
 
   @US_11_TC_03_Date_cannot_be_typed_earlier_in_the_past_at_the_time_of_creation_a_customer
     Scenario: Date_cannot_be_typed_earlier_in_the_past
-        When user enters "<year>" in the past
-        Then user should see  an error "<outcome>" message
+        When user enters "year" in the past
+      Then user should see  an error outcome message
 
   @US_11_TC_04_Date_should_be_created_as_month_day_year_hour_and_minute.
-    Scenario: Date_should_be_created_as_day_month_year_hour_and_minute.
-      When user provides the date as day,month,year,hour and minute respectively.
-      Then user should see  an error "<outcome>" message
+    Scenario: Date_should_be_created_respectively
+        When user provides "date_order" as month,day,year,hour and minute respectively.
+        Then verify the data is accepted
 
-  @US_11_TC_05_Date_should_be_created_as_month_day_year_hour_and_minute.
-    Scenario: TC_1105_date_should_be_created_respectively
-        When user provides date as month,day,year,hour and minute respectively.
-#        Then user verify Create Date Box should not give any error message.
-
-  @US_11_TC_06_User_can_choose_a_user_from_the_registration_and_it_cannot_be_blank
+  @US_11_TC_05_User_can_choose_a_user_from_the_registration_and_it_cannot_be_blank
   Scenario: User_cannot_be_blank
     When user clicks on the user dropdown and select a user
     Then verify a user is selected
 
-  @US_11_TC_07_User_can_choose_an_account_created_on_manage_accounts
+  @US_11_TC_06_User_can_choose_an_account_created_on_manage_accounts
   Scenario: User_can_select_a_created_account
     When user clicks on the account dropdown and select an account
+    Then verify an account is displayed
 
-  @US_11_TC_08_User_can_select_Zelle_Enrolled_optionally_and_save_it
+  @US_11_TC_07_User_can_select_Zelle_Enrolled_optionally_and_save_it
   Scenario: User_can_select_Zelle_Enrolled_button
     When user is able to click on the Zelle Enrolled button
-    Then verify the user is able to click on Save button successfully
-
-  @US_11_TC_09_User_can_select_Zelle_Enrolled_optionally_and_save_it
+    Then verify the user is able to click on the save button.
+  @US_11_TC_08_User_can_select_Zelle_Enrolled_optionally_and_save_it
   Scenario: User_can_skip_Zelle_Enrolled_button
-    When user should not click on the Zelle Enrolled button
-    Then verify the user is able to click on Save button successfully
-
-#taner==>end
+    When user should skip the Zelle Enrolled button
+    Then verify the user is able to click on the save button.
+    Then close the application
