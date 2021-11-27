@@ -1,9 +1,12 @@
-
+#1-Given user navigate to webpage
+#2-And user navigates to menu dropdown and click
+#3-And user select  Register button
+#4-And user goes to SSN box and enters  9 digits  number
 
 @background
 Feature: US_001_Registration_Information
 
-Background: user_goes_to GMI_bank_webpage_and_goes_dropdown_menu_and_select_register_button
+Background: user goes to GMI bank webpage
 Given user navigate to webpage
 And user navigates to menu dropdown and click
 And user select  Register button
@@ -41,4 +44,8 @@ And user select  Register button
   Scenario: TC_07_user_enter_email
     Given user enters Email address
     Then verify user should not see an error message
+
+
+
+
 
