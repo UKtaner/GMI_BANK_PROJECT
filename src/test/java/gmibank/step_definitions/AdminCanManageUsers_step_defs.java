@@ -36,7 +36,7 @@ public class AdminCanManageUsers_step_defs {
     @And("admin enter password")
     public void admin_enter_password(){
         loginPage.password_field.sendKeys(ConfigReader.getProperty("admin_password"));
-        loginPage.signIn_btn.click();
+        loginPage.signIn_Btn.click();
     }
 
     @Then("admin goes user-management page")
