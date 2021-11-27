@@ -13,10 +13,6 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-
-
-
-
 public class US_001_RegistrationPage_step_defs {
 
     RegistrationPage registrationPage = new RegistrationPage();
