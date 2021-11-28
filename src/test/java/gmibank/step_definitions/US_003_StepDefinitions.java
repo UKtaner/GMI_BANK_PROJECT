@@ -14,44 +14,44 @@ public class US_003_StepDefinitions {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-    @Then("user sends {string}")
-    public void userSends(String arg0) {
-        registrationPage.newPasswordBox.sendKeys("9876a68");
-    }
-
-    @Then("verify bar is orange")
-    public void verifyBarIsOrange() {
-        Assert.assertTrue(registrationPage.orangePassword.isDisplayed());
-    }
-
-
-    @Then("user send {string}")
-    public void userSend(String arg0) {
-        registrationPage.newPasswordBox.sendKeys("*98jgjt");
-
-    }
-
-
-    @Then("verify bar is yellow")
-    public void verifyBarIsYellow() {
-        Assert.assertTrue(registrationPage.yellowPassword.isDisplayed());
-
-    }
-
-    @Then("verify bar is green")
-    public void verifyBarIsGreen() {
-        Assert.assertTrue(registrationPage.greenPassword.isDisplayed());
-    }
-
-    @Then("user send to {string}")
-    public void userSendTo(String arg0) {
-        registrationPage.newPasswordBox.sendKeys("9876A68");
-
-    }
-
-    @Then("user send to {string}")
-    public void userSendThe(String arg0) {
-        registrationPage.newPasswordBox.sendKeys("Mypass9*");
-    }
+//    @Then("user sends {string}")
+//    public void userSends(String arg0) {
+//        registrationPage.newPasswordBox.sendKeys("9876a68");
+//    }
+//
+//    @Then("verify bar is orange")
+//    public void verifyBarIsOrange() {
+//        Assert.assertTrue(registrationPage.orangePassword.isDisplayed());
+//    }
+//
+//
+//    @Then("user send {string}")
+//    public void userSend(String arg0) {
+//        registrationPage.newPasswordBox.sendKeys("*98jgjt");
+//
+//    }
+//
+//
+//    @Then("verify bar is yellow")
+//    public void verifyBarIsYellow() {
+//        Assert.assertTrue(registrationPage.yellowPassword.isDisplayed());
+//
+//    }
+//
+//    @Then("verify bar is green")
+//    public void verifyBarIsGreen() {
+//        Assert.assertTrue(registrationPage.greenPassword.isDisplayed());
+//    }
+//
+//    @Then("user send to {string}")
+//    public void userSendTo(String arg0) {
+//        registrationPage.newPasswordBox.sendKeys("9876A68");
+//
+//    }
+//
+//    @Then("user send to {string}")
+//    public void userSendThe(String arg0) {
+//        registrationPage.newPasswordBox.sendKeys("Mypass9*");
+//    }
 }
 
