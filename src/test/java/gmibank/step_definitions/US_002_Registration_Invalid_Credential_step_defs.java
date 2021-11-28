@@ -16,6 +16,7 @@ public class US_002_Registration_Invalid_Credential_step_defs {
 
     @Given("user goes the GMI-bank webpage")
     public void user_goes_the_gmi_bank_webpage() {
+
       Driver.getDriver().get(ConfigReader.getProperty("app_url"));
     }
     @Given("user goes to menu dropdown and click")
