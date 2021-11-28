@@ -11,39 +11,44 @@ public class CustomerCreationPageByEmployee {
 
         }
     //taner==>start
-    //SSN:234-56-7890
     @FindBy(id = "search-ssn")
     public WebElement ssnTextBox;
 
     @FindBy(xpath = "//*[.='Search']")
     public WebElement SearchButton;
 
-    @FindBy(xpath = "//input[@name='middleInitial']")
+    @FindBy(name="middleInitial")
     public WebElement middleNameTextBox;
 
-    @FindBy(xpath = "//input[@name='phoneNumber']")
+    @FindBy(name="phoneNumber")
     public WebElement phoneNumberTextBox;
 
-    @FindBy(xpath = "//input[@name='zipCode']")
+    @FindBy(name="zipCode")
     public WebElement zipCodeTextBox;
 
-    @FindBy(xpath = "//input[@name='city']")
+    @FindBy(name="city")
     public WebElement cityTextBox;
 
-    @FindBy(xpath = "//input[@name='createDate']")
+    @FindBy(name="createDate")
     public WebElement createDateTextBox;
 
-    @FindBy(xpath = "//select[@name='country.id']")
+    @FindBy(xpath="//*[@value='2021-08-15T00:00']")
+    public WebElement timeOccurence;
+
+    @FindBy(name="country.id")
     public WebElement countryIdDropDown;
 
-    @FindBy(xpath = "//input[@name='state']")
+    @FindBy(name="state")
     public WebElement stateTextBox;
 
-    @FindBy(xpath = "//select[@name='user.id']")
+    @FindBy(name="user.id")
     public WebElement userIdDropDown;
 
     @FindBy(id = "tp-customer-account")
     public WebElement accountTypeTextBox;
+
+    @FindBy(xpath = "//*[@value='3976']")
+    public WebElement accountType;
 
     @FindBy(id = "tp-customer-zelleEnrolled")
     public WebElement zelleEnrolledButton;
@@ -51,6 +56,8 @@ public class CustomerCreationPageByEmployee {
     @FindBy(id = "save-entity")
     public WebElement saveButton;
 
+    @FindBy(xpath = "//*[contains(text(),'translation-not-found')]")
+    public WebElement successpopUp;
     //taner==>end
 
 
