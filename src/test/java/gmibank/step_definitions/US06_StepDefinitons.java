@@ -37,7 +37,7 @@ public class US06_StepDefinitons {
 
     @Given("User click Sign in button")
     public void user_click_sign_in_button() {
-        loginPage.signIn_btn.click();
+        loginPage.signIn_Btn.click();
     }
 
     @Given("user open account menu")

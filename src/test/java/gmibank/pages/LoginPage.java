@@ -63,6 +63,12 @@ public class LoginPage {
 
 
 
+    //Osman
+    @FindBy(linkText = "My Accounts")
+    public WebElement myAccounts;
+
+
+
 }
 
 

@@ -41,6 +41,9 @@ public class ManageAccountPage {
     @FindBy (xpath="(//*[contains(text(),'This field is required')])[1]")
     public WebElement thisFieldRequiredMessageDescription;
 
+    @FindBy (xpath="(//*[contains(text(),'This field is required')])[2]")
+    public WebElement thisFieldRequiredMessageBalance;
+
 
 
 }
