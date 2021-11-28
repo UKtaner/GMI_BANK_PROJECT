@@ -2,6 +2,8 @@ package gmibank.step_definitions;
 
 import gmibank.pages.LoginPage;
 import gmibank.pages.ManageAccountPage;
+import gmibank.pages.RegistrationPage;
+import gmibank.utilities.ConfigReader;
 import gmibank.utilities.Driver;
 import gmibank.utilities.ReusableMethods;
 import io.cucumber.java.en.Given;
@@ -21,15 +23,25 @@ import java.util.Map;
 
 public class US_13_ManageAccountPage {
     ManageAccountPage manageAccountPage = new ManageAccountPage();
-    LoginPage loginPage = new LoginPage();
+    RegistrationPage registrationPage = new RegistrationPage();
+
 
 
     @Given("user Sign in with user credentials")
     public void user_sign_in_with_user_credentials() {
-        loginPage.icon.click();
-        loginPage.firstSignIn.click();
-        loginPage.username_field.sendKeys("team3user");
-        loginPage.password_field.sendKeys("Team3user.");
+
+        Driver.getDriver().get("https://www.amazon.com/");
+        ReusableMethods.waitFor(2);
+        //ReusableMethods.waitForVisibility(manageAccountPage.newIcon,5);
+        manageAccountPage.newIcon.click();
+        ReusableMethods.waitFor(2);
+        manageAccountPage.signInMenu.click();
+        ReusableMethods.waitFor(2);
+        manageAccountPage.userName.sendKeys("team3user");
+        ReusableMethods.waitFor(2);
+        manageAccountPage.passWord.sendKeys("Team3user.");
+        ReusableMethods.waitFor(2);
+        manageAccountPage.signInButton.click();
 
 
     }
@@ -81,6 +93,9 @@ public class US_13_ManageAccountPage {
     }
     @Then("User verifies successfull pop up message on the page")
     public void user_verifies_successfull_pop_up_message_on_the_page() {
+        String popUpText= manageAccountPage.successpopUp.getText();
+        Assert.assertTrue(popUpText.contains("translation-not-found"));
+
 
 
     }
@@ -109,11 +124,12 @@ public class US_13_ManageAccountPage {
     @When("User select account type as a “SAVING” from “account type” box")
     public void user_select_account_type_as_a_saving_from_account_type_box() {
         ReusableMethods.waitFor(2);
-        //Select accountType= new Select(driver.findElement(By.name("account type")));
-        manageAccountPage.accountTypeDropdown.click();
-        ReusableMethods.waitFor(2);
-        Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.ARROW_DOWN).perform();
+        Select accountType= new Select(manageAccountPage.accountTypeDropdown);
+        accountType.selectByIndex(1);
+//        manageAccountPage.accountTypeDropdown.click();
+//        ReusableMethods.waitFor(2);
+//        Actions actions = new Actions(Driver.getDriver());
+//        actions.sendKeys(Keys.ARROW_DOWN).perform();
 
 
     }

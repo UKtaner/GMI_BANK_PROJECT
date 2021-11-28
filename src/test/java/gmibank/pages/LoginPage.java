@@ -61,11 +61,11 @@ public class LoginPage {
     public WebElement icon;
 
 
-
-
     //Osman
     @FindBy(linkText = "My Accounts")
     public WebElement myAccounts;
+
+
 
 
 

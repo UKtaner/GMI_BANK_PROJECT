@@ -45,5 +45,28 @@ public class ManageAccountPage {
     public WebElement thisFieldRequiredMessageBalance;
 
 
+    @FindBy (id="account-menu")
+    public WebElement newIcon;
+
+    @FindBy (xpath="//*[@id='login-item']/span")
+    public WebElement signInMenu;
+
+    @FindBy (id="username")
+    public WebElement userName;
+
+    @FindBy (id="password")
+    public WebElement passWord;
+
+    @FindBy (xpath = "//*[@id='login-page']/div/form/div[3]/button[2]/span")
+    public WebElement signInButton;
+
+    @FindBy(xpath = "//*[contains(text(),'translation-not-found')]")
+    public WebElement successpopUp;
+
+
+
+
+
+
 
 }
