@@ -30,7 +30,7 @@ public class US_13_ManageAccountPage {
     @Given("user Sign in with user credentials")
     public void user_sign_in_with_user_credentials() {
 
-        Driver.getDriver().get("https://www.amazon.com/");
+        Driver.getDriver().get("www.gmibank.com");
         ReusableMethods.waitFor(2);
         //ReusableMethods.waitForVisibility(manageAccountPage.newIcon,5);
         manageAccountPage.newIcon.click();

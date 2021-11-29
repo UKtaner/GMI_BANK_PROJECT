@@ -1,8 +1,8 @@
 @account_page
 Feature: Employee_can_create_a_new_Account
 
-#  Background:manage_Account_Page
-   Scenario: Login olacak
+  Background:manage_Account_Page
+#   Scenario: Login procedure
     Given user Sign in with user credentials
     And user click “My Operations” and select “Manage Accounts”
     And user Click “+Create a new Account” button
