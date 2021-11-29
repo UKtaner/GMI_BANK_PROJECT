@@ -2,7 +2,7 @@
 Feature: US_003_Registration_Information
 
   Background: user goes to GMI bank webpage
-    Given user navigate to webpage
+    Given user goes to webpage
     And user navigates to menu dropdown and click
     And user select  Register button
 
@@ -15,7 +15,7 @@ Then user send to "9876A68"
 Then verify bar is orange
 
 Scenario:  US_03_TC08_user_enter_new_password
-Then user send "9ASDFGLH"
+Then user sends a "9ASDFGLH"
 Then verify bar is orange
 
 Scenario:  US_03_TC08_user_enter_new_password
