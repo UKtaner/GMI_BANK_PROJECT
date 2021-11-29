@@ -49,9 +49,16 @@ public class US_003_StepDefinitions {
 
     }
 
-    @Then("user send to {string}")
-    public void userSendThe(String arg0) {
-        registrationPage.newPasswordBox.sendKeys("Mypass9*");
+    @Then("user sends a {string}")
+    public void userSendsA(String arg0) {
+        registrationPage.newPasswordBox.sendKeys(arg0);
+
+    }
+
+    @Then("user send the {string}")
+    public void userSendThe(String str) {
+        registrationPage.newPasswordBox.sendKeys(str);
+
     }
 }
 
