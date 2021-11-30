@@ -6,6 +6,7 @@ import gmibank.pages.RegistrationPage;
 import gmibank.utilities.ConfigReader;
 import gmibank.utilities.Driver;
 import gmibank.utilities.ReusableMethods;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -30,18 +31,18 @@ public class US_13_ManageAccountPage {
     @Given("user Sign in with user credentials")
     public void user_sign_in_with_user_credentials() {
 
-        Driver.getDriver().get("www.gmibank.com");
-        ReusableMethods.waitFor(2);
-        //ReusableMethods.waitForVisibility(manageAccountPage.newIcon,5);
-        manageAccountPage.newIcon.click();
-        ReusableMethods.waitFor(2);
-        manageAccountPage.signInMenu.click();
-        ReusableMethods.waitFor(2);
-        manageAccountPage.userName.sendKeys("team3user");
-        ReusableMethods.waitFor(2);
-        manageAccountPage.passWord.sendKeys("Team3user.");
-        ReusableMethods.waitFor(2);
-        manageAccountPage.signInButton.click();
+//        Driver.getDriver().get(ConfigReader.getProperty("app_url"));
+//        ReusableMethods.waitFor(2);
+//        //ReusableMethods.waitForVisibility(manageAccountPage.newIcon,5);
+//        manageAccountPage.newIcon.click();
+//        ReusableMethods.waitFor(2);
+//        manageAccountPage.signInMenu.click();
+//        ReusableMethods.waitFor(2);
+//        manageAccountPage.userName.sendKeys("team3employee2");
+//        ReusableMethods.waitFor(2);
+//        manageAccountPage.passWord.sendKeys("Team3employee2.");
+//        ReusableMethods.waitFor(2);
+//        manageAccountPage.signInButton.click();
 
 
     }
@@ -161,4 +162,15 @@ public class US_13_ManageAccountPage {
     }
 
 
+    @When("user clicks on the sign in button")
+    public void userClicksOnTheSignInButton() {
+        manageAccountPage.signInButton.click();
+
+    }
+
+    @And("clicks on Manage Accounts")
+    public void clicksOnManageAccounts() {
+        manageAccountPage.manageAccountsMenu.click();
+
+    }
 }

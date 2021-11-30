@@ -1,11 +1,15 @@
 @account_page
 Feature: Employee_can_create_a_new_Account
 
-  Background:manage_Account_Page
-#   Scenario: Login procedure
-    Given user Sign in with user credentials
-    And user click “My Operations” and select “Manage Accounts”
+  Background:
+    Given user is on the main page
+    And user enters employee username
+    And user enters employee password
+    When user clicks on the sign in button
+    Then user goes to My Operations dropdown
+    And clicks on Manage Accounts
     And user Click “+Create a new Account” button
+
 
   Scenario: TC_0001_User_should_create_a_description_for_the_new_account_and_it_cannot_be_blank
     When User should not fill “description” area.
