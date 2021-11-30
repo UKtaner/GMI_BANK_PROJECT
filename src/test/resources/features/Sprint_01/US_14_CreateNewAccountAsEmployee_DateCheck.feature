@@ -19,8 +19,6 @@ Feature:Date should be created on the time of account creation
 
 Scenario: TC_02_The date should be created as month, day, year, hour and minute
 
-
-
   And user selects Manage Accounts
   Then user clicks Create a new Account button
   Then user enter "TRIAL ACCOUNT2" in description and "8951" in the balance
@@ -33,13 +31,13 @@ Scenario: TC_02_The date should be created as month, day, year, hour and minute
     Then user clicks the create a new customer button
     Then user enters a valid SSN number in SSNBox
     Then user clicks Search
-    And verifies if the boxes are blank or not
+    Then verifies if the boxes are blank or not
 
 
   Scenario: TC_04 User can choose an account created on manage accounts
 
     And user selects Manage Accounts
-    Then user select an accout by ID
+    Then user select an account by ID
     And verifies if this is an account
 
   Scenario: TC_05 User can select Zelle Enrolled optionally and save it
