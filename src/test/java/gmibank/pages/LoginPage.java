@@ -60,6 +60,12 @@ public class LoginPage {
     @FindBy(xpath = "(//a[@href='#'])[2]")
     public WebElement icon;
 
+    @FindBy(xpath = "//li[@id='admin-menu']//a[@class='dropdown-toggle nav-link']")
+    public WebElement administration;
+
+    @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu-right show']//a[1]")
+    public WebElement userManagement;
+
 
     //Osman
     @FindBy(linkText = "My Accounts")
