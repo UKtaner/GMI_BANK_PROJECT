@@ -67,11 +67,11 @@ public class LoginPage {
     public WebElement userManagement;
 
 
-
-
     //Osman
     @FindBy(linkText = "My Accounts")
     public WebElement myAccounts;
+
+
 
 
 

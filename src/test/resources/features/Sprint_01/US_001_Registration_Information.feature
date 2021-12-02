@@ -15,30 +15,30 @@ And user select  Register button
 
   Scenario: TC_02_user_should_enter_the_firstname
     Given user enters first name
-    Then user should not see any error message at firstname box
+    Then user verify the first name box is not blank
 
 
   Scenario: TC_03_user_should_enter_the_lastname
     Given user enters last name
-    Then user should not see any error message at lastname box
+    Then user verify the last name box is not blank
 
 
   Scenario: TC_04_user_should_enter_the_address
     Given user enters a valid address
-    Then user should see an error message at address box
+    Then user verify address text box
 
 
   Scenario: TC_05_user_should_enter_phone_number
     Given user enters phone number
-    Then user should see an error message at Phone Number box
+    Then user verify the phone number text box
 
-@username
+
   Scenario: TC_06_user_should_enter_username
     Given user enters Username
-    Then user should see an error message at Username box
+    Then user verify the username text box
 
 
   Scenario: TC_07_user_should_enter_email
     Given user enters Email
-    Then user should not see an error message
+    Then user verify the email Text box
 

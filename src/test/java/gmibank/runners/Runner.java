@@ -18,9 +18,10 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
-        tags = "@deneme",
+        tags = "@account_page",
+//        tags = "@background",
+        dryRun = false
 
-        dryRun = true
 
 )
 public class Runner {
