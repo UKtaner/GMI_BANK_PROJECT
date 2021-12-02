@@ -18,8 +18,9 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
-        tags = "@account_page",
-        dryRun = false
+        tags = "@StateAPI",
+
+        dryRun = true
 
 
 )
