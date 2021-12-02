@@ -127,6 +127,7 @@ ExcelUtil excelUtil;
     public void user_should_skip_the_zelle_enrolled_button() {
         if (!customerCreationPageByEmployee.zelleEnrolledButton.isSelected()) {
             customerCreationPageByEmployee.saveButton.click();
+            //Assert.assertTrue(customerCreationPageByEmployee.zelleEnrolledButton.isEnabled());
         }
     }
         @Then("verify the user is able to see the success popUp")
