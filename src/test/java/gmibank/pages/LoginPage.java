@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public LoginPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public LoginPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id="login-item")
+    @FindBy(id = "login-item")
     public WebElement loginButton;
 
     @FindBy(id = "username")
@@ -42,7 +42,7 @@ public class LoginPage {
     public WebElement resetPassword;
 
 
-    @FindBy(xpath ="//span[contains(text(),'Register a new account')]")
+    @FindBy(xpath = "//span[contains(text(),'Register a new account')]")
     public WebElement register_btn;
 
     @FindBy(id = "register-title")
@@ -66,13 +66,13 @@ public class LoginPage {
     @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu-right show']//a[1]")
     public WebElement userManagement;
 
+    @FindBy(xpath = "//span[.='Manage Accounts']")//Gokcen
+    public WebElement managaAccounts;
+
 
     //Osman
     @FindBy(linkText = "My Accounts")
     public WebElement myAccounts;
-
-
-
 
 
 }
