@@ -19,7 +19,7 @@ Feature:User Info Functionality
     Then Verify  the  last name in the Last Name textbox is   "oz"
     Then Verify  the  email in the Email textbox is  "gkcn@xxx.com"
     Then Verify  the  selected language is "English"
-    Then user Sign out
+   # Then user Sign out
 
   Scenario: TC_02 There should be 2 languages available "English and Turkish"
     Given user open account menu
