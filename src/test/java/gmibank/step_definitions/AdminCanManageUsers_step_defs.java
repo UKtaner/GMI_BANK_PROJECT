@@ -1,5 +1,6 @@
 package gmibank.step_definitions;
 
+import com.github.javafaker.Faker;
 import gmibank.pages.LoginPage;
 import gmibank.pages.UserDetailsPage;
 import gmibank.pages.UserEditPage;
