@@ -5,11 +5,9 @@ Feature: System_should_allow_Admin_to_manage_a_customer
     And admin go login page
     And admin enter the username "team3manager"
     And admin enter password "Team3manager."
-    Then admin goes user-management page
-    Then admin goes page
+    Then manager goes manager customers page
 
     Scenario: All customers should show up on informations
-      Then manager goes manager customers page
       Then manager check sees FirstName
       Then manager check sees LastName
       Then manager check sees Middle Initial
