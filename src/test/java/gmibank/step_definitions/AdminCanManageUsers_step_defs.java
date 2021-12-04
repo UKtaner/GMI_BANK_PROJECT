@@ -30,13 +30,13 @@ public class AdminCanManageUsers_step_defs {
         loginPage.firstSignIn.click();
     }
 
-    @And("admin enter the username")
-    public void admin_enter_the_username(){
-        loginPage.username_field.sendKeys(ConfigReader.getProperty("admin_username"));
+    @And("admin enter the username {string}")
+    public void admin_enter_the_username(String string){
+        loginPage.username_field.sendKeys(string);
     }
-    @And("admin enter password")
-    public void admin_enter_password(){
-        loginPage.password_field.sendKeys(ConfigReader.getProperty("admin_password"));
+    @And("admin enter password {string}")
+    public void admin_enter_password(String string){
+        loginPage.password_field.sendKeys(string);
         loginPage.signIn_Btn.click();
     }
 

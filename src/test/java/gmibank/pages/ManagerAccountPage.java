@@ -29,4 +29,7 @@ public class ManagerAccountPage {
     @FindBy (id="save-entity")
     public WebElement saveButton;
 
+    @FindBy(id="jh-create-entity")//Gokcen
+    public WebElement createAccountButton;
+
 }
