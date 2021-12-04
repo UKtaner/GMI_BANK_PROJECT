@@ -37,6 +37,9 @@ public class CustomersPage {
     @FindBy(id = "jhi-confirm-delete-tPCustomer")
     public WebElement deletePopUp;
 
+    @FindBy (className = "btn btn-success btn-sm")
+    public WebElement idUser;
+
 }
 
 //
