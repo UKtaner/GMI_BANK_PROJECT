@@ -4,8 +4,8 @@ Feature: Admin_Control_Functionality
   Background: Navigating_the_home_page
     Given admin on home page
     And admin go login page
-    And admin enter the username
-    And admin enter password
+    And admin enter the username "team3admin"
+    And admin enter password "Team3admin."
     Then admin goes user-management page
     Then admin goes page
 

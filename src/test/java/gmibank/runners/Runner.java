@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
 
         tags = "@background",
 
-        dryRun = false
+        dryRun = true
 
 )
 public class Runner {
