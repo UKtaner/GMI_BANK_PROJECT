@@ -14,6 +14,8 @@ public class LoginPage {
     @FindBy(id = "login-item")
     public WebElement loginButton;
 
+    @FindBy(xpath ="//*[@id='account-menu']")
+    public WebElement firstLoginButton;
     @FindBy(id = "username")
     public WebElement username_field;
 
