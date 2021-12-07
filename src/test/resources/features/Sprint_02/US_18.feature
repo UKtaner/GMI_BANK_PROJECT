@@ -17,3 +17,7 @@ Feature: System_should_allow_Admin_to_manage_a_customer
       Then manager check sees Address
       Then manager check sees Create Date
 
+      Scenario: There should be a View option where customer can be navigated to all customer info and see
+      edit button there
+        Then manager check all View pages Is there a edit button inside
+

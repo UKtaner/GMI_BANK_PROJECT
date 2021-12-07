@@ -95,4 +95,9 @@ public class US_18_StepDefinitions {
             Assert.assertEquals("1","0");
         }
     }
+
+    @Then("manager check all View pages Is there a edit button inside")
+    public void manager_check_all_View_pages_Is_there_a_edit_button_inside(){
+
+    }
 }

@@ -18,9 +18,13 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
+        tags = "@smoke",
+
+
 
 
         tags = "@ssn_test_invalid",
+
 
 
         dryRun = false
