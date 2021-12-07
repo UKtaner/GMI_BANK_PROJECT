@@ -41,9 +41,46 @@ public class AdminCanManageUsers_step_defs {
     }
 
     @Then("admin goes user-management page")
-    public void admin_goes_user_management_page(){
+    public void admin_goes_user_management_page() throws InterruptedException {
+        Thread.sleep(2000);
         loginPage.administration.click();
         loginPage.userManagement.click();
+    }
+
+    @Then("admin click new account")
+    public void admin_click_new_account(){
+        userManagementPage.createAnAccount.click();
+    }
+
+    @Then("admin create a test accounts login {string}")
+    public void admin_create_a_test_accounts_login(String string){
+        userManagementPage.loginInput.sendKeys(string);
+    }
+
+    @Then("admin create a test accounts first name {string}")
+    public void admin_create_a_test_accounts_first_name(String string){
+        userManagementPage.fNameInput.sendKeys(string);
+    }
+
+    @Then("admin create a test accounts last name {string}")
+    public void admin_create_a_test_accounts_last_name(String string){
+        userManagementPage.lNameInput.sendKeys(string);
+    }
+
+    @Then("admin create a test accounts email {string}")
+    public void admin_create_a_test_accounts_emial(String string){
+        userManagementPage.emailInput.sendKeys(string);
+    }
+
+    @Then("admin create a test accounts profile {string}")
+    public void admin_create_a_test_accounts_profile(String string){
+        Select select = new Select(userManagementPage.profileSelect);
+        select.selectByValue(string);
+    }
+
+    @Then("admin save changes")
+    public void admin_save_changes(){
+        userManagementPage.saveButton.click();
     }
 
     @Then("admin goes page")
@@ -53,6 +90,8 @@ public class AdminCanManageUsers_step_defs {
 
     @Then("admin activate user")
     public void admin_activate_user(){
+        userManagementPage.userActivate.click();
+        Driver.getDriver().navigate().refresh();
         userManagementPage.userActivate.click();
     }
 
@@ -71,6 +110,8 @@ public class AdminCanManageUsers_step_defs {
     @Then("admin activate employee")
     public void admin_activate_employee(){
         userManagementPage.employeeActivate.click();
+        Driver.getDriver().navigate().refresh();
+        userManagementPage.employeeActivate.click();
     }
 
     @Then("admin check is employee activated")
@@ -83,6 +124,8 @@ public class AdminCanManageUsers_step_defs {
     @Then("admin activate manager")
     public void admin_activate_manager(){
         userManagementPage.managerActivate.click();
+        Driver.getDriver().navigate().refresh();
+        userManagementPage.managerActivate.click();
     }
 
     @Then("admin check is manager activated")
@@ -94,6 +137,8 @@ public class AdminCanManageUsers_step_defs {
 
     @Then("admin activate admin")
     public  void admin_activate_admin(){
+        userManagementPage.adminActivate.click();
+        Driver.getDriver().navigate().refresh();
         userManagementPage.adminActivate.click();
     }
 
@@ -109,12 +154,12 @@ public class AdminCanManageUsers_step_defs {
         userManagementPage.adminDetails.click();
     }
 
-    @Then("admin check firstname")
-    public  void admin_check_firstname() throws InterruptedException {
+    @Then("admin check firstname {string}")
+    public  void admin_check_firstname(String string) throws InterruptedException {
         Thread.sleep(2000);
         String actualResult = userDetailsPage.FirstName.getText();
         System.out.println(actualResult);
-        String expectedResult = "team";
+        String expectedResult = string;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -122,7 +167,7 @@ public class AdminCanManageUsers_step_defs {
     public void admin_check_lastname() throws InterruptedException {
         Thread.sleep(2000);
         String actualResult = userDetailsPage.LastName.getText();
-        String expectedResult = "3";
+        String expectedResult = "team3";
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -130,7 +175,7 @@ public class AdminCanManageUsers_step_defs {
     public void admin_check_admin_profiles() throws InterruptedException {
         Thread.sleep(2000);
         String actualResult = userDetailsPage.Email.getText();
-        String expectedResult = "team3_@team.com";
+        String expectedResult = "team3admin@gmail.com";
         Assert.assertEquals(expectedResult, actualResult);
 
         String actualResultP = userDetailsPage.Profile.getText();
@@ -147,7 +192,7 @@ public class AdminCanManageUsers_step_defs {
     public void admin_check_manager_profiles() throws InterruptedException {
         Thread.sleep(2000);
         String actualResult = userDetailsPage.Email.getText();
-        String expectedResult = "team3____@team.com";
+        String expectedResult = "team3manager@gmail.com";
         Assert.assertEquals(expectedResult, actualResult);
 
         String actualResultP = userDetailsPage.Profile.getText();
@@ -164,7 +209,7 @@ public class AdminCanManageUsers_step_defs {
     public void admin_check_employee_profiles() throws InterruptedException {
         Thread.sleep(2000);
         String actualResult = userDetailsPage.Email.getText();
-        String expectedResult = "team3__@team.com";
+        String expectedResult = "team3employee@gmail.com";
         Assert.assertEquals(expectedResult, actualResult);
 
         String actualResultP = userDetailsPage.Profile.getText();
@@ -181,29 +226,12 @@ public class AdminCanManageUsers_step_defs {
     public void admin_check_user_profiles() throws InterruptedException {
         Thread.sleep(2000);
         String actualResult = userDetailsPage.Email.getText();
-        String expectedResult = "team3@team.com";
+        String expectedResult = "team3user@gmail.com";
         Assert.assertEquals(expectedResult, actualResult);
 
         String actualResultP = userDetailsPage.Profile.getText();
         String expectedResultP = "ROLE_USER";
         Assert.assertEquals(expectedResultP, actualResultP);
-    }
-
-    @Then("admin check user firstname")
-    public  void admin_check_user_firstname() throws InterruptedException {
-        Thread.sleep(2000);
-        String actualResult = userDetailsPage.FirstName.getText();
-        System.out.println(actualResult);
-        String expectedResult = "Ali";
-        Assert.assertEquals(expectedResult, actualResult);
-    }
-
-    @Then("admin check user lastname")
-    public void admin_check_user_lastname() throws InterruptedException {
-        Thread.sleep(2000);
-        String actualResult = userDetailsPage.LastName.getText();
-        String expectedResult = "Can";
-        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Then("admin goes admin edit page")
@@ -295,14 +323,12 @@ public class AdminCanManageUsers_step_defs {
     }
 
     @Then("admin goes users page")
-    public void admin_goes_users_page() throws InterruptedException {
-        userManagementPage.modifiedBy.click();
-        Thread.sleep(2000);
-        userManagementPage.modifiedBy.click();
+    public void admin_goes_users_page() {
+        userManagementPage.modifiedDate.click();
     }
 
     @Then("admin select admin delete button")
-    public void admin_select_admin_delete_button(){
+    public void admin_select_admin_delete_button() {
         userManagementPage.adminDelete.click();
     }
 
@@ -310,13 +336,15 @@ public class AdminCanManageUsers_step_defs {
     public void admin_select_delete_button_again() throws InterruptedException {
         Thread.sleep(2000);
         userManagementPage.Delete.click();
+        Thread.sleep(2000);
+        userManagementPage.modifiedDate.click();
+        userManagementPage.modifiedDate.click();
     }
 
     @Then("admin check the admin deleted")
     public void admin_check_the_admin_deleted(){
         try{
             userManagementPage.adminName.getText();
-
             Assert.assertEquals("1","0");
         }catch (Exception e){
             Assert.assertEquals("0","0");
@@ -342,6 +370,7 @@ public class AdminCanManageUsers_step_defs {
     @Then("admin select employee delete button")
     public void admin_select_employee_delete_button(){
         userManagementPage.employeeDelete.click();
+
     }
 
     @Then("admin check the employee deleted")
@@ -358,6 +387,7 @@ public class AdminCanManageUsers_step_defs {
     @Then("admin select user delete button")
     public void admin_select_user_delete_button(){
         userManagementPage.userDelete.click();
+
     }
 
     @Then("admin check the user deleted")
