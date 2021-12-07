@@ -20,6 +20,7 @@ public class US_22_StateValidation {
                 .when()
                 .get(endpoint+id);
         response.prettyPrint();
+
         actualData = response.as(StatePojo.class);
         System.out.println(actualData);
     }
