@@ -9,6 +9,11 @@ public class StatePojo {
     private int id;
     private String name;
     private String tpcountry;
+    /*{
+    "id": 103694,
+    "name": "xxxxxxxVirginiaxxxxx",
+    "tpcountry": null
+}*/
 
     public StatePojo() {
     }

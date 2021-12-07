@@ -20,6 +20,13 @@ import org.junit.runner.RunWith;
         glue = "gmibank/step_definitions",
         tags = "@smoke",
 
+
+
+
+        tags = "@ssn_test_invalid",
+
+
+
         dryRun = false
 
 )
