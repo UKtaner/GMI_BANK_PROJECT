@@ -1,6 +1,8 @@
 package gmibank.pages;
 
 import gmibank.utilities.Driver;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -51,6 +53,35 @@ public class CustomerAccounts {
 @FindBy(xpath = "//span[.='Save']")
     public WebElement saveCustomer;
 
+@FindBy(xpath = "//*[@id='entity-menu']/div[1]/a[1]")
+    public WebElement myAccounts;
+    @FindBy(xpath = "//*[@id='entity-menu']/div/a[2]")
+    public WebElement transferMoney;
 
+   @FindBy (xpath = "//*[@id='app-view-container']/div[1]/div/div/div/div[1]/div/table")
+    public WebElement customerAccountsTable;
 
+    @FindBy(xpath = "//tbody/tr[2]/td[1]")
+    public WebElement  row2Cell1;
+    @FindBy(xpath = "//tbody/tr[2]/td[2]")
+    public WebElement row2Cell2;
+
+    @FindBy (xpath = "//*[@id='fromAccountId']/option[2]")
+    public WebElement savingDropdownAccount;
+    @FindBy (xpath = "//*[@id='fromAccountId']/option[4]")
+    public WebElement checkingDropdownAccount;
+@FindBy(xpath = "//*[@id='toAccountId']/option[3]")
+    public WebElement sendToAccount;
+@FindBy (xpath = "//*[@id='balance']")
+    public WebElement balanceSent;
+@FindBy (xpath = "//*[@id='balancecent']")
+    public WebElement balanceCent;
+
+@FindBy (xpath = "//*[@id='make-transfer']")
+    public  WebElement makeTransfer;
+@FindBy(xpath = "//*[@id='description']")
+    public WebElement transferDescription;
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+public WebElement popUpMessage;
 }

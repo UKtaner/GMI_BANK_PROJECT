@@ -25,11 +25,12 @@ import java.util.Map;
 
 
 public class US14_DateCreationWithAccounts {
-LoginPage loginPage=new LoginPage();
+
 CustomerAccounts customerAccounts=new CustomerAccounts();
 CustomerCreationPageByEmployee customerCreationPageByEmployee=new CustomerCreationPageByEmployee();
     @Then("user is logged-in as an employee with valid credentials")
     public void user_is_logged_in_as_an_employee_with_valid_credentials(DataTable credentials) {
+        LoginPage loginPage=new LoginPage();
         loginPage.firstLoginButton.click();
         ReusableMethods.waitFor(1);
         loginPage.firstSignIn.click();
@@ -102,20 +103,17 @@ customerCreationPageByEmployee.createDateTextBox.sendKeys(formattedDate);
     @Then("verifies if new account created")
     public void verifies_if_new_account_created() {
         ReusableMethods.waitFor(1);
+        customerAccounts.selectID.click();
+
+        ReusableMethods.waitFor(1);
 Assert.assertTrue(customerCreationPageByEmployee.accountSuccess.getText().contains("Description"));
-        ReusableMethods.waitFor(1);
 Assert.assertTrue(customerCreationPageByEmployee.accountSuccess.getText().contains("Balance"));
-        ReusableMethods.waitFor(1);
 Assert.assertTrue(customerCreationPageByEmployee.accountSuccess.getText().contains("Account Type"));
-        ReusableMethods.waitFor(1);
 Assert.assertTrue(customerCreationPageByEmployee.accountSuccess.getText().contains("Account Status Type"));
-        ReusableMethods.waitFor(1);
 Assert.assertTrue(customerCreationPageByEmployee.accountSuccess.getText().contains("Create Date"));
-        ReusableMethods.waitFor(1);
 Assert.assertTrue(customerCreationPageByEmployee.accountSuccess.getText().contains("Closed Date"));
-        ReusableMethods.waitFor(1);
 Assert.assertTrue(customerCreationPageByEmployee.accountSuccess.getText().contains("Employee"));
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(5);
 
 
     }
