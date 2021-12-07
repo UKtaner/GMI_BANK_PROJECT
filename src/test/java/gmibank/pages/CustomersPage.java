@@ -37,6 +37,10 @@ public class CustomersPage {
     @FindBy(id = "jhi-confirm-delete-tPCustomer")
     public WebElement deletePopUp;
 
+
+    @FindBy (className = "btn btn-success btn-sm")
+    public WebElement idUser;
+
     @FindBy(xpath = "//th[2]//span[1]")
     public WebElement firstName;
 
@@ -60,6 +64,7 @@ public class CustomersPage {
 
     @FindBy(xpath = "//th[9]//span[1]")
     public WebElement createDate;
+
 
 }
 
