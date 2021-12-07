@@ -19,9 +19,11 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
 
-        tags = "@db",
 
-        dryRun = true
+        tags = "@ssn_test_invalid",
+
+
+        dryRun = false
 
 )
 public class Runner {
