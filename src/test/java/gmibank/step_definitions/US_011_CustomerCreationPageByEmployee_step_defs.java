@@ -20,24 +20,25 @@ import java.util.Map;
 
 public class US_011_CustomerCreationPageByEmployee_step_defs {
 
-CustomerCreationPageByEmployee customerCreationPageByEmployee=new CustomerCreationPageByEmployee();
-Faker faker=new Faker();
-ExcelUtil excelUtil;
+    CustomerCreationPageByEmployee customerCreationPageByEmployee = new CustomerCreationPageByEmployee();
+    Faker faker = new Faker();
+    ExcelUtil excelUtil;
+
     @When("user enters the {string} respectively")
     public void user_enters_the_respectively(String date) {
-         excelUtil=new ExcelUtil("src/test/resources/testdata/date_info.xlsx",date);
-        List<Map<String, String>> testData=excelUtil.getDataList();
-        for(Map<String,String> appData : testData ) {
-            Driver.getDriver().get(ConfigReader.getProperty("app_url"));
-            customerCreationPageByEmployee.createDateTextBox.sendKeys(appData.get("dateTest"));
+//        excelUtil = new ExcelUtil("src/test/resources/testdata/date_info.xlsx", date);
+//        List<Map<String, String>> testData = excelUtil.getDataList();
+//        for (Map<String, String> appData : testData) {
+//            Driver.getDriver().get(ConfigReader.getProperty("app_url"));
+//            customerCreationPageByEmployee.createDateTextBox.sendKeys(appData.get("dateTest"));
+//
+//        }
+//    }
 
-         }
-        }
-
-//        date=ConfigReader.getProperty("dateTest");
-//        System.out.println("date = " + date);
-//       customerCreationPageByEmployee.createDateTextBox.sendKeys(date);
-
+    date=ConfigReader.getProperty("dateTest");
+        System.out.println("date = "+date);
+       customerCreationPageByEmployee.createDateTextBox.sendKeys(date);
+}
     @Then("verify the data is accepted")
     public void verify_the_data_is_accepted() {
         ReusableMethods.waitForVisibility(customerCreationPageByEmployee.createDateTextBox,5);
@@ -85,6 +86,7 @@ ExcelUtil excelUtil;
         LocalDateTime now = LocalDateTime.now();
         String currentDateStr=expectedDateOrder.format(now);
         String  currentMonth=currentDateStr.substring(0,2);
+
         Assert.assertTrue(Integer.parseInt(currentMonth)>Integer.parseInt(expectedDate.substring(0,2)));
         String currentDay=currentDateStr.substring(3,5);
         Assert.assertTrue(Integer.parseInt(currentDay)>Integer.parseInt(expectedDate.substring(3,5)));
@@ -126,6 +128,7 @@ ExcelUtil excelUtil;
     public void user_should_skip_the_zelle_enrolled_button() {
         if (!customerCreationPageByEmployee.zelleEnrolledButton.isSelected()) {
             customerCreationPageByEmployee.saveButton.click();
+            //Assert.assertTrue(customerCreationPageByEmployee.zelleEnrolledButton.isEnabled());
         }
     }
         @Then("verify the user is able to see the success popUp")
