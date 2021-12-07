@@ -22,11 +22,6 @@ import org.junit.runner.RunWith;
 
 
 
-
-        tags = "@ssn_test_invalid",
-
-
-
         dryRun = false
 
 )
