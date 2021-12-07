@@ -19,9 +19,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
 
-        tags = "@StateAPI",
+        tags = "@db",
 
-        dryRun = false
+        dryRun = true
 
 )
 public class Runner {
