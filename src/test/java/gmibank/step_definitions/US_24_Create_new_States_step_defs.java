@@ -48,7 +48,6 @@ public class US_24_Create_new_States_step_defs {
 
 
 
-
 //    String emptyStateName;
 //
 //    emptyStateName + = cus[i].getState.name());
