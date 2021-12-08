@@ -25,6 +25,7 @@ public class US_010_AddressCanNotBeLeftBlank {
     String address = customerCreationPageByEmployee.address.getAttribute("value").trim();
         System.out.println("address = " + address);
         Assert.assertTrue((hasDigit(address)&& hasLetter(address)));
+
     }
 
     @Then("verify city box is not blank")
