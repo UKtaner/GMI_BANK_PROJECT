@@ -25,6 +25,47 @@ public class CustomersPage {
     @FindBy(xpath = "(//span[.='Delete'])[2]")
     public WebElement deleteButton;
 
+    @FindBy(id = "jh-create-entity")
+    public WebElement createANewCustomerButton;
+
+    @FindBy(xpath = "//div[.='translation-not-found[gmiBankBackendApp.tPCustomer.updated]']")
+    public WebElement confirmationPopUp;
+
+    @FindBy(xpath = "//h5")
+    public WebElement deleteMessage;
+
+    @FindBy(id = "jhi-confirm-delete-tPCustomer")
+    public WebElement deletePopUp;
+
+
+    @FindBy (className = "btn btn-success btn-sm")
+    public WebElement idUser;
+
+    @FindBy(xpath = "//th[2]//span[1]")
+    public WebElement firstName;
+
+    @FindBy(xpath = "//th[3]//span[1]")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//th[4]//span[1]")
+    public WebElement middleInitial;
+
+    @FindBy(xpath = "//th[5]//span[1]")
+    public WebElement email;
+
+    @FindBy(xpath = "//th[6]//span[1]")
+    public WebElement mobilePhoneNumber;
+
+    @FindBy(xpath = "//th[7]//span[1]")
+    public WebElement phoneNumber;
+
+    @FindBy(xpath = "//th[8]//span[1]")
+    public WebElement address;
+
+    @FindBy(xpath = "//th[9]//span[1]")
+    public WebElement createDate;
+
+
 }
 
 //
