@@ -42,7 +42,7 @@ public class US_26_Update_countries_step_defs {
     public void verify_if_country_is_updated(String name) {
         Assert.assertTrue(response.getStatusCode()==200);
 //        Assert.assertTrue(actualData.getName().equals(name));
-        Assert.assertEquals("Expected Data doesn't match with actual Data","USA", actualData.getName());
+        Assert.assertEquals("Expected Data doesn't match with actual Data", name, actualData.getName());
 
 
     }
