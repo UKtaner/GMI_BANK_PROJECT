@@ -40,6 +40,7 @@ public class US_24_Create_new_States_step_defs {
 
         @Then("verify if state is created")
         public void verify_if_state_is_created() {
+        Assert.assertTrue(response.getStatusCode()==201);
         Assert.assertEquals("Expected Data doesn't match with actual Data","BC", actualData.getName());
 
     }
