@@ -5,7 +5,7 @@ import gmibank.utilities.ConfigReader;
 import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.codehaus.jackson.map.ObjectMapper;
+import org.junit.Assert;
 
 import static io.restassured.RestAssured.*;
 
@@ -13,43 +13,35 @@ public class US_24_Create_new_States_step_defs {
 
     Response response;
     String bearerToken = ConfigReader.getProperty("api_bearer_token");
-    StatePojo [] states;
+    StatePojo actualData = new StatePojo();
 
-    @Given("the url is {string}")
-    public void the_url_is(String url) {
+
+
+    @Given("user sets the response api {string} and create state using {string} and {string}")
+    public void user_sets_the_response_api_and_create_state_using_and(String url, String id, String name) {
+
+
         response = given().headers(
-                "Authorization",
-                "Bearer " + bearerToken,
-                "Content-Type",
-                ContentType.JSON,
-                "Accept",
-                ContentType.JSON
-        ).when().get(url).then().contentType(ContentType.JSON).extract().response();
+                        "Authorization",
+                        "Bearer " + bearerToken,
+                        "Content-Type",
+                        ContentType.JSON,
+                        "Accept",
+                        ContentType.JSON).when().
+                body("{\"countryId\":" + id + ",\"name\":\"" + name + "\"}").
+                // body(data).
+                        post(url).then().contentType(ContentType.JSON).extract().response();
+        response.prettyPrint();
 
-    }
-    @Given("the user can create new state data")
-    public void the_user_can_create_new_state_data() {
-
-        ObjectMapper objectMapper = new ObjectMapper();
-//        states = objectMapper.
-
-
-
-    }
-    @Given("all state data will be saved to file")
-    public void all_state_data_will_be_saved_to_file() {
-
-    }
-    @Then("verify all state data newly created")
-    public void verify_all_state_data_newly_created() {
+        actualData = response.as(StatePojo.class);
+        System.out.println(actualData);
 
     }
 
+        @Then("verify if state is created")
+        public void verify_if_state_is_created() {
+        Assert.assertEquals("Expected Data doesn't match with actual Data","BC", actualData.getName());
 
+    }
 
-
-
-//    String emptyStateName;
-//
-//    emptyStateName + = cus[i].getState.name());
 }
