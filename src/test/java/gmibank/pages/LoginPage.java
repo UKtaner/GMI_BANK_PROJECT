@@ -7,13 +7,15 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public LoginPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public LoginPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id="login-item")
+    @FindBy(id = "login-item")
     public WebElement loginButton;
 
+    @FindBy(xpath ="//*[@id='account-menu']")
+    public WebElement firstLoginButton;
     @FindBy(id = "username")
     public WebElement username_field;
 
@@ -42,7 +44,7 @@ public class LoginPage {
     public WebElement resetPassword;
 
 
-    @FindBy(xpath ="//span[contains(text(),'Register a new account')]")
+    @FindBy(xpath = "//span[contains(text(),'Register a new account')]")
     public WebElement register_btn;
 
     @FindBy(id = "register-title")
@@ -53,6 +55,15 @@ public class LoginPage {
 
     @FindBy(xpath = "//span[.='Manage Customers']")
     public WebElement manageCustomers;
+
+
+
+    @FindBy(xpath = "//body/div[@id='root']/div/div/div[@id='app-header']/nav/div/ul[@id='header-tabs']/li[@id='account-menu']/a[1]")
+    public WebElement userMenu;
+
+    @FindBy(xpath = "//li[@id='account-menu']//a[3]")
+    public WebElement singOut;
+
 
     @FindBy(xpath = "//span[.='Sign in']")
     public WebElement firstSignIn;
@@ -66,13 +77,13 @@ public class LoginPage {
     @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu-right show']//a[1]")
     public WebElement userManagement;
 
-
+    @FindBy(xpath = "//span[.='Manage Accounts']")//Gokcen
+    public WebElement managaAccounts;
 
 
     //Osman
     @FindBy(linkText = "My Accounts")
     public WebElement myAccounts;
-
 
 
 }
