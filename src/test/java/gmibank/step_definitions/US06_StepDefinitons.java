@@ -1,5 +1,6 @@
 package gmibank.step_definitions;
 
+
 import gmibank.pages.LoginPage;
 import gmibank.pages.UserInfoPage;
 import gmibank.pages.UserManagementPage;
