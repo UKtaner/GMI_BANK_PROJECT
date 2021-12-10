@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
         glue = "gmibank/step_definitions",
         tags = "@smoke",
 
-        dryRun = false
+        dryRun = true
 
 )
 public class Runner {
