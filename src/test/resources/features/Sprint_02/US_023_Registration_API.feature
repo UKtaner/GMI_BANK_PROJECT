@@ -1,9 +1,6 @@
-@Registration-API
-  Feature: Api data reading
-    Background: set the api data into response
-    Given user uses end point "https://www.gmibank.com/api/tp-account-registrations" to get all customer data
+Feature: read app
 
-      Scenario: get api data end validate
-        Given user should get all register data and deserialize the data to java
-        And user saves the register data to correspondent files
-        Then user needs to validate all register api data
+  Scenario: read all applications
+    Given Given  user go to api end point registrations "https://www.gmibank.com/api/tp-account-registrations"
+    And user get all registrations data and De-Serialization the data to java
+    Then user validates 3.th registrations info
