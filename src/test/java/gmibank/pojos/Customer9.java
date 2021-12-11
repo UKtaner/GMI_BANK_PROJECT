@@ -15,7 +15,7 @@ public class Customer9 {
     private String address;
     private String city;
     private String ssn;
-    private String createdDate;
+    private String createDate;
     private boolean zelleEnrolled;
     private Country country;
     private String state;
@@ -110,12 +110,12 @@ public class Customer9 {
         this.ssn = ssn;
     }
 
-    public String getCreatedDate() {
-        return createdDate;
+    public String getCreateDate() {
+        return createDate;
     }
 
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
     public boolean isZelleEnrolled() {
@@ -172,7 +172,7 @@ public class Customer9 {
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", ssn='" + ssn + '\'' +
-                ", createdDate='" + createdDate + '\'' +
+                ", createdDate='" + createDate + '\'' +
                 ", zelleEnrolled=" + zelleEnrolled +
                 ", country=" + country +
                 ", state='" + state + '\'' +

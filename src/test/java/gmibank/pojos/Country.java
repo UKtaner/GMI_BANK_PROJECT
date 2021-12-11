@@ -3,9 +3,7 @@ package gmibank.pojos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-
-
-public class CountryPojo {
+public class Country {
 
     private int id;
     private String name;
@@ -36,5 +34,7 @@ public class CountryPojo {
     }
 
 
-}
 
+
+
+}

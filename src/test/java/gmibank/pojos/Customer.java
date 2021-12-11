@@ -6,14 +6,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Customer {
 
     private int id;
-    private String login;
     private String firstName;
     private String lastName;
+    private String middleInitial;
     private String email;
-    private boolean activated;
-    private String langKey;
-    private String imageUrl;
-    private String resetDate;
+    private String mobilePhoneNumber;
+    private String phoneNumber;
+    private String zipCode;
+    private String address;
+    private String city;
+    private String ssn;
+    private String createDate;
+    private boolean zelleEnrolled;
+    private Country country;
+    private String state;
+    private User user;
 
     public int getId() {
         return id;
@@ -21,14 +28,6 @@ public class Customer {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getFirstName() {
@@ -47,6 +46,14 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    public String getMiddleInitial() {
+        return middleInitial;
+    }
+
+    public void setMiddleInitial(String middleInitial) {
+        this.middleInitial = middleInitial;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -55,53 +62,104 @@ public class Customer {
         this.email = email;
     }
 
-    public boolean isActivated() {
-        return activated;
+    public String getMobilePhoneNumber() {
+        return mobilePhoneNumber;
     }
 
-    public void setActivated(boolean activated) {
-        this.activated = activated;
+    public void setMobilePhoneNumber(String mobilePhoneNumber) {
+        this.mobilePhoneNumber = mobilePhoneNumber;
     }
 
-    public String getLangKey() {
-        return langKey;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setLangKey(String langKey) {
-        this.langKey = langKey;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
-    public String getResetDate() {
-        return resetDate;
+    public String getAddress() {
+        return address;
     }
 
-    public void setResetDate(String resetDate) {
-        this.resetDate = resetDate;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "User1{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", activated=" + activated +
-                ", langKey='" + langKey + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", resetDate='" + resetDate + '\'' +
-                '}';
+    public String getCity() {
+        return city;
     }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
+    }
+
+    public boolean isZelleEnrolled() {
+        return zelleEnrolled;
+    }
+
+    public void setZelleEnrolled(boolean zelleEnrolled) {
+        this.zelleEnrolled = zelleEnrolled;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Accounts getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Accounts accounts) {
+        this.accounts = accounts;
+    }
+
+    private Accounts accounts;
+
+
 }
-
-
 
