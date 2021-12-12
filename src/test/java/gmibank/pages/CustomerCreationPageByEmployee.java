@@ -81,4 +81,38 @@ public class CustomerCreationPageByEmployee {
     @FindBy(name = "address")
     public WebElement addressBox;
 
+
+    //Murat Account Creation
+
+    @FindBy(xpath ="//*[@id='entity-menu']/div/a[2]" )
+    public WebElement manageAccounts;
+    @FindBy(xpath ="//*[contains(text(),'Create a new Account')]" )
+    public WebElement createAccount;
+
+@FindBy(xpath = "//*[@id='tp-account-description']")
+    public  WebElement descriptionBox;
+    @FindBy(xpath = "//*[@id='tp-account-balance']")
+    public  WebElement balanceBox;
+    @FindBy (xpath = "//*[@id='tp-account-accountType']/option[1]")
+    public WebElement accountCheckingAccount;
+    @FindBy (xpath = "//*[@id='tp-account-accountType']/option[2]")
+    public WebElement accountSavingAccount;
+    @FindBy (xpath = "//*[@id='tp-account-accountType']/option[3]")
+    public WebElement accountCreditCardAccount;
+    @FindBy (xpath = "//*[@id='tp-account-accountType']/option[4]")
+    public WebElement accountInvestingAccount;
+    @FindBy(xpath = "//*[@id='tp-account-createDate']")
+    public WebElement createDate;
+@FindBy (xpath = "//*[@name='closedDate']")
+public WebElement closedDate;
+@FindBy (xpath = "//*[@id='app-view-container']/div[1]/div/div/div/div/dl")
+public WebElement accountSuccess;
+@FindBy(xpath ="//input[@name='firstName']" )
+public WebElement customerFirstName;
+    @FindBy(xpath ="//*[@id='tp-customer-lastName']" )
+    public WebElement customerLastName;
+
+    //Orhan
+    @FindBy(xpath = "//input[@id='tp-customer-ssn']")
+    public WebElement ssnBox;
 }

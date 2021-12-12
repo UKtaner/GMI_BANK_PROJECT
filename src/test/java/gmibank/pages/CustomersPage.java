@@ -3,6 +3,7 @@ package gmibank.pages;
 //  ==>   My Operations > Manage Customers
 
 import gmibank.utilities.Driver;
+import org.openqa.selenium.Beta;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,7 +23,7 @@ public class CustomersPage {
     @FindBy(xpath = "(//span[.='Edit'])[2]")
     public WebElement editButton;
 
-    @FindBy(xpath = "(//span[.='Delete'])[2]")
+    @FindBy(xpath = "//tr[1]//td[10]//div[1]//a[3]")
     public WebElement deleteButton;
 
     @FindBy(id = "jh-create-entity")
@@ -36,6 +37,51 @@ public class CustomersPage {
 
     @FindBy(id = "jhi-confirm-delete-tPCustomer")
     public WebElement deletePopUp;
+
+
+    @FindBy (className = "btn btn-success btn-sm")
+    public WebElement idUser;
+
+    @FindBy(xpath = "//th[2]//span[1]")
+    public WebElement firstName;
+
+    @FindBy(xpath = "//th[3]//span[1]")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//th[4]//span[1]")
+    public WebElement middleInitial;
+
+    @FindBy(xpath = "//th[5]//span[1]")
+    public WebElement email;
+
+    @FindBy(xpath = "//th[6]//span[1]")
+    public WebElement mobilePhoneNumber;
+
+    @FindBy(xpath = "//th[7]//span[1]")
+    public WebElement phoneNumber;
+
+    @FindBy(xpath = "//th[8]//span[1]")
+    public WebElement address;
+
+    @FindBy(xpath = "//span[contains(text(),'Create Date')]")
+    public WebElement createDate;
+
+    @FindBy(xpath = "//a[@id='jh-create-entity']")
+    public WebElement CreateCustomer;
+
+
+    @FindBy(xpath = "//tr[1]//td[10]//div[1]//a[2]")
+    public WebElement editBtn;
+
+    @FindBy(xpath = "//tr[1]//td[2]")
+    public WebElement customer;
+
+    @FindBy(xpath = "//span[contains(text(),'Confirm delete operation')]")
+    public WebElement confirmDeleteText;
+
+    @FindBy(xpath = "//button[@id='jhi-confirm-delete-tPCustomer']")
+    public WebElement cancelDelete;
+
 
 }
 

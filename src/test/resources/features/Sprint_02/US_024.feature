@@ -2,10 +2,15 @@
 
 Feature: User can Just create each state 1 by 1
 
-  Background: Set the api url
-    Given the url is "https://www.gmibank.com/api/tp-states"
+  @CreateState
+  Scenario Outline: create a state
+    Given user sets the response api "https://www.gmibank.com/api/tp-states" and create state using "<id>" and "<name>"
+    Then verify if "<name>" is created
 
-    Scenario: Creating state data and validation
-      Given the user can create new state data
-      And  all state data will be saved to file
-      Then verify all state data newly created
+    Examples:create state
+    |id          |name|
+    | 113914     |BC  |
+    |   113806   |Alberta|
+    |   113806   |Ontario|
+
+

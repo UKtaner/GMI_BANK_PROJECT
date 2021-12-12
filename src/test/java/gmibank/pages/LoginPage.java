@@ -14,6 +14,8 @@ public class LoginPage {
     @FindBy(id = "login-item")
     public WebElement loginButton;
 
+    @FindBy(xpath ="//*[@id='account-menu']")
+    public WebElement firstLoginButton;
     @FindBy(id = "username")
     public WebElement username_field;
 
@@ -53,6 +55,15 @@ public class LoginPage {
 
     @FindBy(xpath = "//span[.='Manage Customers']")
     public WebElement manageCustomers;
+
+
+
+    @FindBy(xpath = "//body/div[@id='root']/div/div/div[@id='app-header']/nav/div/ul[@id='header-tabs']/li[@id='account-menu']/a[1]")
+    public WebElement userMenu;
+
+    @FindBy(xpath = "//li[@id='account-menu']//a[3]")
+    public WebElement singOut;
+
 
     @FindBy(xpath = "//span[.='Sign in']")
     public WebElement firstSignIn;
