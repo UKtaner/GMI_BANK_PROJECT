@@ -10,3 +10,4 @@ Feature: country update
     Examples:update country
       |id        |name|
       | 103800   |USA |
+      | 113945   |Canada|
