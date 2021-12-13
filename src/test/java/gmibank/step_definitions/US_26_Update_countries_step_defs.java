@@ -1,6 +1,6 @@
 package gmibank.step_definitions;
 
-import gmibank.pojos.CountryPojo;
+import gmibank.pojos.Country;
 import gmibank.utilities.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,7 +14,7 @@ public class US_26_Update_countries_step_defs {
 
     Response response;
     String bearerToken = ConfigReader.getProperty("api_bearer_token");
-    CountryPojo actualData = new CountryPojo();
+    Country actualData = new Country();
 
 
     @Given("user sets the response api {string} and update country using {string} and {string}")
@@ -33,7 +33,7 @@ public class US_26_Update_countries_step_defs {
         response.prettyPrint();
 
 //        Map<String, Object> actualData = response.as(HashMap.class);
-        actualData = response.as(CountryPojo.class);
+        actualData = response.as(Country.class);
         System.out.println(actualData);
 
     }
