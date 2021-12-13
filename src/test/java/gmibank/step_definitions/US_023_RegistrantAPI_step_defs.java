@@ -5,10 +5,14 @@ import gmibank.utilities.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.Assert;
 
 
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.urlEncodingEnabled;
@@ -16,40 +20,29 @@ import static io.restassured.RestAssured.urlEncodingEnabled;
 public class US_023_RegistrantAPI_step_defs {
 
 
+    List<Map<String,Object>> allApplicants;
     Response response;
-    String bearerToken = ConfigReader.getProperty("api_bearer_token_register");
-
-
-    @Given("user uses end point {string} to get all customer data")
-    public void user_uses_end_point_to_get_all_customer_data(String url) {
-
-        response = given().headers(
-                "Authorization",
-                "Bearer " + bearerToken,
-                "Content-Type",
-                ContentType.JSON,
-                "Accept",
-                ContentType.JSON)
+    JsonPath json;
+    @Given("Given  user go to api end point registrations {string}")
+    public void given_user_go_to_api_end_point_registrations(String endpoint) {
+        response=given().accept(ContentType.JSON)
+                .auth()
+                .oauth2(ConfigReader.getProperty("api_bearer_token_registrant"))
                 .when()
-                .get(url)
-                .then()
-                .contentType(ContentType.JSON)
-                .extract()
-                .response();
-        response.prettyPrint();
+                .get(endpoint);
 
     }
-    @Given("user should get all register data and deserialize the data to java")
-    public void user_should_get_all_register_data_and_deserialize_the_data_to_java() {
+    @Given("user get all registrations data and De-Serialization the data to java")
+    public void user_get_all_registrations_data_and_de_serialization_the_data_to_java() {
+        json=response.jsonPath();
+        allApplicants=json.getList("$");
+        System.out.println(allApplicants.get(0));
 
     }
-    @Given("user saves the register data to correspondent files")
-    public void user_saves_the_register_data_to_correspondent_files() {
-
+    @Then("user validates {int}.th registrations info")
+    public void user_validates_th_registrations_info(Integer int1) {
+        String expectedData="345-342-3423";
+        Assert.assertEquals(expectedData,allApplicants.get(0).get("mobilePhoneNumber"));
+        System.out.println(allApplicants.get(0).get("mobilePhoneNumber"));
     }
-    @Then("user needs to validate all register api data")
-    public void user_needs_to_validate_all_register_api_data() {
-
-    }
-
 }
