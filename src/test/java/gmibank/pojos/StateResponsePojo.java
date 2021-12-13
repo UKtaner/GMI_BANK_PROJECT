@@ -2,7 +2,7 @@ package gmibank.pojos;
 
 public class StateResponsePojo {
      private Integer id;
-     private StatePojo statePojo;
+     private States statePojo;
 
      public Integer getId() {
           return id;
@@ -12,11 +12,11 @@ public class StateResponsePojo {
           this.id = id;
      }
 
-     public StatePojo getStatePojo() {
+     public States getStatePojo() {
           return statePojo;
      }
 
-     public void setStatePojo(StatePojo statePojo) {
+     public void setStatePojo(States statePojo) {
           this.statePojo = statePojo;
      }
 

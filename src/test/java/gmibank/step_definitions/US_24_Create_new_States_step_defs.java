@@ -1,6 +1,6 @@
 package gmibank.step_definitions;
 
-import gmibank.pojos.StatePojo;
+import gmibank.pojos.States;
 import gmibank.utilities.ConfigReader;
 import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
@@ -13,7 +13,7 @@ public class US_24_Create_new_States_step_defs {
 
     Response response;
     String bearerToken = ConfigReader.getProperty("api_bearer_token");
-    StatePojo actualData = new StatePojo();
+    States actualData = new States();
 
 
 
@@ -33,7 +33,7 @@ public class US_24_Create_new_States_step_defs {
                         post(url).then().contentType(ContentType.JSON).extract().response();
         response.prettyPrint();
 
-        actualData = response.as(StatePojo.class);
+        actualData = response.as(States.class);
         System.out.println(actualData);
 
     }

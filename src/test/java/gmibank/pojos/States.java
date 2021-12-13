@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class StatePojo {
+public class States {
 
     private int id;
     private String name;
@@ -15,10 +15,10 @@ public class StatePojo {
     "tpcountry": null
 }*/
 
-    public StatePojo() {
+    public States() {
     }
 
-    public StatePojo(int id, String name, String tpcountry) {
+    public States(int id, String name, String tpcountry) {
         this.id = id;
         this.name = name;
         this.tpcountry = tpcountry;
