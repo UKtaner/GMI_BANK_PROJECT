@@ -2,6 +2,7 @@ package gmibank.step_definitions;
 
 import gmibank.pojos.States;
 import gmibank.utilities.ConfigReader;
+import gmibank.utilities.ReusableMethods;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
 
@@ -16,7 +17,7 @@ public class US_22_StateValidation {
     public void user_read_the_state_from_and_extension(String endpoint, String id) {
         response = given().headers(
                     "Authorization",
-                "Bearer " + ConfigReader.getProperty("api_bearer_token"))
+                "Bearer " + ReusableMethods.generateToken())
                 .when()
                 .get(endpoint+id);
         response.prettyPrint();
