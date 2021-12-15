@@ -11,6 +11,7 @@ public class CountryPojo {
     private String name;
     private String state;
 
+
     public int getId() {
         return id;
     }
@@ -36,5 +37,13 @@ public class CountryPojo {
     }
 
 
+    @Override
+    public String toString() {
+        return "CountryPojo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }
 
