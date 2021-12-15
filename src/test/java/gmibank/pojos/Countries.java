@@ -3,24 +3,46 @@ package gmibank.pojos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Customer {
+public class Countries {
 
     private int id;
     private String firstName;
-    private String lastName;
-    private String middleInitial;
-    private String email;
-    private String mobilePhoneNumber;
-    private String phoneNumber;
-    private String zipCode;
-    private String address;
+    private String  lastName;
+    private String  middleInitial;
+    private String  email;
+    private String  mobilePhoneNumber;
+    private String  phoneNumber;
+    private String  zipCode;
+    private String  address;
     private String city;
-    private String ssn;
+    private String  ssn;
     private String createDate;
     private boolean zelleEnrolled;
-    private Country country;
+
+    public Country[] getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country[] country) {
+        this.country = country;
+    }
+
+    Country []country;
+
+
+
+
     private String state;
-    private User user;
+    private String accounts;
+
+
+
+
+
+
+
+
+
 
     public int getId() {
         return id;
@@ -126,14 +148,6 @@ public class Customer {
         this.zelleEnrolled = zelleEnrolled;
     }
 
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
     public String getState() {
         return state;
     }
@@ -142,27 +156,15 @@ public class Customer {
         this.state = state;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Accounts getAccounts() {
+    public String getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(Accounts accounts) {
+    public void setAccounts(String accounts) {
         this.accounts = accounts;
     }
 
-    private Accounts accounts;
 
 
 
 }
-
-
-

@@ -6,6 +6,9 @@ import gmibank.pojos.States;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
+import java.util.List;
+
+
 public class WriteToTxt {
 
     public static void saveDataInFile(String fileName, Customer[] customers)  {
@@ -88,6 +91,21 @@ public class WriteToTxt {
             for (int i=0; i<states.length; i++)
                 writer.append(states[i].getName()+" , "+states[i].getId()+"\n");
 
+            writer.close();
+        } catch(Exception e){
+
+        }
+    }
+
+
+    public static void saveAllCustomersComingFromDB(String fileName, List<Object> allCustomer)  {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+
+            for (int i=0; i<allCustomer.size(); i++) {
+                writer.append(allCustomer.get(i) + ",\n" );
+
+            }
             writer.close();
         } catch(Exception e){
 
