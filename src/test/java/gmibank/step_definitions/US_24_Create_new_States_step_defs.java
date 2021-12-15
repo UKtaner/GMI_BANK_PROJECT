@@ -29,8 +29,11 @@ public class US_24_Create_new_States_step_defs {
                         "Accept",
                         ContentType.JSON).when().
                 body("{\"countryId\":" + id + ",\"name\":\"" + name + "\"}").
-                // body(data).
-                        post(url).then().contentType(ContentType.JSON).extract().response();
+                post(url).
+                then().
+                contentType(ContentType.JSON).
+                extract().response();
+
         response.prettyPrint();
 
         actualData = response.as(States.class);
@@ -38,9 +41,10 @@ public class US_24_Create_new_States_step_defs {
 
     }
 
-        @Then("verify if state is created")
-        public void verify_if_state_is_created() {
-        Assert.assertEquals("Expected Data doesn't match with actual Data","BC", actualData.getName());
+    @Then("verify if {string} is created")
+    public void verify_if_is_created(String name) {
+        Assert.assertTrue(response.getStatusCode()==201);
+        Assert.assertEquals("Expected Data doesn't match with actual Data", name, actualData.getName());
 
     }
 

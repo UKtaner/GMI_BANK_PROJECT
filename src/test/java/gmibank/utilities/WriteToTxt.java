@@ -5,7 +5,10 @@ import gmibank.pojos.States;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+<<<<<<< HEAD
 import java.util.List;
+=======
+>>>>>>> master
 
 public class WriteToTxt {
 
@@ -95,6 +98,7 @@ public class WriteToTxt {
         }
     }
 
+<<<<<<< HEAD
     public static void saveAllCustomersComingFromDB(String fileName, List<Object> allCustomer)  {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
@@ -108,5 +112,7 @@ public class WriteToTxt {
 
         }
     }
+=======
+>>>>>>> master
 
 }

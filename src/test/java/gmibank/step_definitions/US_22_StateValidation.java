@@ -4,6 +4,7 @@ import gmibank.pojos.States;
 import gmibank.utilities.ConfigReader;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
+
 import org.junit.Assert;
 
 import static io.restassured.RestAssured.given;
