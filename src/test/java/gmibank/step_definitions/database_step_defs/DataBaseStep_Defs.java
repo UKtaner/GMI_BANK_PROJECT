@@ -1,7 +1,9 @@
 package gmibank.step_definitions.database_step_defs;
 
 import gmibank.pojos.Country;
+import gmibank.pojos.States;
 import gmibank.utilities.*;
+import gmibank.utilities.ExcelUtil;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -18,7 +20,7 @@ public class DataBaseStep_Defs {
     String userfileName = ConfigReader.getProperty("user_Info");
     String countryfileName = ConfigReader.getProperty("country_Info");
     String statefileName = ConfigReader.getProperty("state_Info");
-    String usa_states = ConfigReader.getProperty("usa_state_Info");
+    String usa_states = ConfigReader.getProperty("usa_states");
 
 
     @Given("user creates a connection with db using {string} , {string} and {string}")
@@ -43,12 +45,12 @@ public class DataBaseStep_Defs {
     }
     @Then("user validates db data using user records")
     public void user_validates_db_data_using_user_records() {
-       List<String>actualSSNIDs=  ReadTxt.returnAllCustomersSSNs(userfileName);
-       List<String>expectedSSNIDs=new ArrayList<>();
-       expectedSSNIDs.add("Anonymous");
-        expectedSSNIDs.add("tester");
+       List<String>user=  ReadTxt.returnAllCustomersSSNs(userfileName);
+       List<String>expectedUser=new ArrayList<>();
+        expectedUser.add("Anonymous");
+        expectedUser.add("tester");
 
-       Assert.assertTrue("The data does not match",actualSSNIDs.containsAll(expectedSSNIDs));
+       Assert.assertTrue("The data does not match",user.containsAll(expectedUser));
 
     }
     @Given("user sends the query to db and reads related country data {string} and {string}")
@@ -65,13 +67,13 @@ public class DataBaseStep_Defs {
     }
     @Then("user validates db data using country records")
     public void user_validates_db_data_using_country_records() {
-        List<String>actualSSNIDs=  ReadTxt.returnAllCustomersSSNs(countryfileName);
-        System.out.println("actualSSNIDs: "+actualSSNIDs);
-        List<String>expectedSSNIDs=new ArrayList<>();
-        expectedSSNIDs.add("Germanyia");
-        System.out.println(expectedSSNIDs);
-        expectedSSNIDs.add("USA");
-        Assert.assertTrue("The data does not match",actualSSNIDs.containsAll(expectedSSNIDs));
+        List<String>country=  ReadTxt.returnAllCustomersSSNs(countryfileName);
+        System.out.println("Country_List: "+country);
+        List<String>expectedCountry=new ArrayList<>();
+        expectedCountry.add("Germanyia");
+        System.out.println(expectedCountry);
+        expectedCountry.add("USA");
+        Assert.assertTrue("The data does not match",country.containsAll(expectedCountry));
     }
     @Given("user sends the query to db and reads all USA states data {string} and {string}")
     public void user_sends_the_query_to_db_and_reads_all_usa_states_data_and(String query, String column_name) {
@@ -84,13 +86,13 @@ public class DataBaseStep_Defs {
     }
     @Then("user validates db data using state records")
     public void user_validates_db_data_using_state_records() {
-        List<String>actualSSNIDs=  ReadTxt.returnAllCustomersSSNs(statefileName);
-        System.out.println(actualSSNIDs);
-
-        List<String>expectedSSNIDs=new ArrayList<>();
-        expectedSSNIDs.add("Virginia");
-        System.out.println(expectedSSNIDs);
-        Assert.assertTrue("The data does not match",actualSSNIDs.containsAll(expectedSSNIDs));
+        List<String>state=  ReadTxt.returnAllCustomersSSNs(statefileName);
+        System.out.println(state);
+        List<String>expectedState=new ArrayList<>();
+        expectedState.add("Virginia");
+         List<String>usaStateList=  ReadTxt.returnAllCustomersSSNs(usa_states);
+        System.out.println("All_USA_STATES = " + usaStateList);
+        Assert.assertTrue("The data does not match",usaStateList.containsAll(expectedState));
 
     }
 
