@@ -10,7 +10,7 @@ Feature: User can Just create each state 1 by 1
     Examples:create state
     |id          |name|
     | 113914     |BC  |
-    |   113806   |Alberta|
-    |   113806   |Ontario|
+    | 113806     |Alberta|
+    | 113806     |Ontario|
 
 

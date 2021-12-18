@@ -1,9 +1,9 @@
 Feature: System should not allow to make updates with invalid credentials
 
-  Background : User is on the password change page
+  Scenario: : User is on the password change page
     Given user is logged-in as a customer with valid credentials
     And username is present on the main navigation menu
-    And user activates user profiles menu from the main navigation
+    When user activates user profiles menu from the main navigation
     And user selects Password from the opening menu
     Then verify user is on the right page
     Then verify username appears on the top of the page in the title

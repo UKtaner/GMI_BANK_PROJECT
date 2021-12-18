@@ -9,6 +9,7 @@ public class Country {
     private String name;
     private String state;
 
+
     public int getId() {
         return id;
     }
@@ -32,6 +33,7 @@ public class Country {
     public void setState(String state) {
         this.state = state;
     }
+
 
 
 
