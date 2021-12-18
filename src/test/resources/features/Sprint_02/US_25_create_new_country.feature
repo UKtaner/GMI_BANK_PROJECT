@@ -1,29 +1,11 @@
+@CountryApi
+
 Feature: System should allow new countries to be added to the country list
 
-  Scenario Outline:
-    Given User get the country list from "<endpoint>"
-    Examples:
-      |endpoint|
-      |https://www.gmibank.com/api/tp-countries |
-
-  Scenario Outline: Check if country is not already added to the list
-    Given user has the "<API_endpoint>" for getting the country names list
-    When user send a GET request to the API to get the names
-    Then verifies "<country>" name is not on the list
-    And content type is JSON
-    And status code is 200
-
-    Examples:
-      | API_endpoint                          | country |
-      | https://www.gmibank.com/api/tp-states | Bosna   |
-
-
     Scenario Outline: Add new country name to the countries list
-      Given user has the "<API_endpoint>" for adding a new country
-      When user send a POST request with new country name
-      Then verify "<country>" has been added to the list
-      And status code is 201
+      Given user has the endpoint "<endpoint>" and create "<country>" "<name>"
+      Then verify "<country>" has been added to the list, status code 201
 
       Examples:
-        | API_endpoint                          | country |
-        | https://www.gmibank.com/api/tp-states | Bosna   |
+        | name | country | endpoint |
+        | name | Bosxna   | https://www.gmibank.com/api/tp-countries |

@@ -1,65 +1,46 @@
 package gmibank.step_definitions;
 
-import gmibank.pojos.StatePojo;
+
 import gmibank.utilities.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.Assert;
 
 import static io.restassured.RestAssured.given;
 
 public class US_25_Create_Country_step_defs {
 
     Response response;
+    String endpoint;
 
-    @Given("User get the country list from {string}")
-    public void user_get_the_country_list_from(String endpoint) {
+    @Given("user has the endpoint {string} and create {string} {string}")
+    public void user_has_the_endpoint_and_create(String url, String country, String name) {
+        endpoint = url;
+
+        String requestBody = "{ \"" +   name  +  "\":\""+ country+  "\"}";
+//{" name ":"country"}
+
         response = given().headers(
                 "Authorization",
-                "Bearer " + ConfigReader.getProperty("api_bearer_token"))
-                .when()
-                .get(endpoint);
+                "Bearer " + ConfigReader.getProperty("api_bearer_token"),
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON)
+                .body(requestBody)
+                .when().post(url);
         response.prettyPrint();
-    }
-
-
-
-
-    @Given("user has the {string} for getting the country names list")
-    public void user_has_the_for_getting_the_country_names_list(String string) {
 
     }
-    @When("user send a GET request to the API to get the names")
-    public void user_send_a_get_request_to_the_api_to_get_the_names() {
 
-    }
-    @Then("verifies {string} name is not on the list")
-    public void verifies_name_is_not_on_the_list(String string) {
+    @Then("verify {string} has been added to the list, status code {int}")
+    public void verify_has_been_added_to_the_list_status_code(String country, int code) {
+        int actualcode = response.statusCode();
 
-    }
-    @Then("content type is JSON")
-    public void content_type_is_json() {
-
-    }
-    @Then("status code is {int}")
-    public void status_code_is(Integer int1) {
-
+        Assert.assertTrue(response.asString().contains(country));
+        Assert.assertEquals(code,actualcode);
     }
 }
-
-/*
-[
-        {
-        "id": 24115,
-        "name": "China",
-        "states": null
-        },
-        {
-        "id": 22347,
-        "name": "KENYA",
-        "states": null
-        }
-]
- */
-
