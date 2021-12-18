@@ -1,9 +1,8 @@
 package gmibank.pojos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.github.javafaker.Country;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Customer {
+public class Customer2 {
 
     private int id;
     private String firstName;
@@ -20,7 +19,8 @@ public class Customer {
     private boolean zelleEnrolled;
     private Country country;
     private String state;
-    private User user;
+    private String user;
+    private String accounts;
 
     public int getId() {
         return id;
@@ -142,27 +142,42 @@ public class Customer {
         this.state = state;
     }
 
-    public User getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
-    public Accounts getAccounts() {
+    public String getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(Accounts accounts) {
+    public void setAccounts(String accounts) {
         this.accounts = accounts;
     }
 
-    private Accounts accounts;
-
-
-
+    @Override
+    public String toString() {
+        return "Customer9{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleInitial='" + middleInitial + '\'' +
+                ", email='" + email + '\'' +
+                ", mobilePhoneNumber='" + mobilePhoneNumber + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", ssn='" + ssn + '\'' +
+                ", createdDate='" + createDate + '\'' +
+                ", zelleEnrolled=" + zelleEnrolled +
+                ", country=" + country +
+                ", state='" + state + '\'' +
+                ", user='" + user + '\'' +
+                ", accounts='" + accounts + '\'' +
+                '}';
+    }
 }
-
-
-

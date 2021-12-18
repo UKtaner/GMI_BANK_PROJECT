@@ -1,6 +1,6 @@
 
 
-@background
+@background @demo
 Feature: US_001_Registration_Information
 
 Background: user_goes_to GMI_bank_webpage_and_goes_dropdown_menu_and_select_register_button

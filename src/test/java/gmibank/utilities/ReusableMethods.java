@@ -1,6 +1,9 @@
 package gmibank.utilities;
 
 
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.*;
@@ -12,11 +15,10 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Function;
+
+import static io.restassured.RestAssured.given;
 
 public class ReusableMethods {
     /*HOW DO YOU GET SCREENSHOT?
@@ -197,5 +199,16 @@ public class ReusableMethods {
                 break;
             }
         }
+    }
+    public static String generateToken(){
+        Map<String,Object> map = new HashMap<>();
+        map.put("username",ConfigReader.getProperty("admin_username"));
+        map.put("password",ConfigReader.getProperty("admin_password"));
+        map.put("rememberme","true");
+        String endPoint = "https://gmibank.com/api/authenticate";
+        Response response = given().contentType(ContentType.JSON).body(map).when().post(endPoint);
+        JsonPath jsonPath = response.jsonPath();
+        String token = jsonPath.getString("id_token");
+        return token;
     }
 }
