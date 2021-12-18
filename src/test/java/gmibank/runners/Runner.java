@@ -18,7 +18,13 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "gmibank/step_definitions",
+<<<<<<< HEAD
         tags = "@api",
+=======
+        tags = "@customerInfo",
+
+
+>>>>>>> master
 
         dryRun = false
 
