@@ -2,7 +2,7 @@ package gmibank.pojos;
 
 import com.github.javafaker.Country;
 
-public class Customer9 {
+public class Customer2 {
 
     private int id;
     private String firstName;

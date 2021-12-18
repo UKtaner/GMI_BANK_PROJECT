@@ -3,6 +3,7 @@ package gmibank.step_definitions;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gmibank.pojos.Customer;
 import gmibank.utilities.ConfigReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
@@ -64,5 +65,6 @@ public class CustomerApiSteps {
 //        WriteToTxt.returnCustomerSNN(filePath,customers[10]);
 
     }
+
 
 }

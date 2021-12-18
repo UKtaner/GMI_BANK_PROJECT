@@ -10,3 +10,4 @@ Feature: Validate all customers' info
     And user deserializes country data as json to java pojo
     Then user validates the data
 
+
