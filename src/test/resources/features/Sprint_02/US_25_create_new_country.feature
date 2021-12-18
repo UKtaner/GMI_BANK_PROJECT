@@ -1,5 +1,11 @@
 Feature: System should allow new countries to be added to the country list
 
+  Scenario Outline:
+    Given User get the country list from "<endpoint>"
+    Examples:
+      |endpoint|
+      |https://www.gmibank.com/api/tp-countries |
+
   Scenario Outline: Check if country is not already added to the list
     Given user has the "<API_endpoint>" for getting the country names list
     When user send a GET request to the API to get the names
