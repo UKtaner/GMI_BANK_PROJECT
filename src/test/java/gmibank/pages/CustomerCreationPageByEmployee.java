@@ -111,4 +111,8 @@ public WebElement accountSuccess;
 public WebElement customerFirstName;
     @FindBy(xpath ="//*[@id='tp-customer-lastName']" )
     public WebElement customerLastName;
+
+    //Orhan
+    @FindBy(xpath = "//input[@id='tp-customer-ssn']")
+    public WebElement ssnBox;
 }
