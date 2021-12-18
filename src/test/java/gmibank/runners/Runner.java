@@ -20,12 +20,6 @@ import org.junit.runner.RunWith;
         glue = "gmibank/step_definitions",
 
         tags = "@api",
-
-      
-
-
-
-
         dryRun = false
 
 )
