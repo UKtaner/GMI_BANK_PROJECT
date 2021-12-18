@@ -31,15 +31,15 @@ public class US_30_PdfCreation {
     @Then("user creates pdf with information")
     public void user_creates_pdf_with_information() {
         Document document = new Document();
-        String path ="testdata/info.pdf";
-        String title ="Information";
+        String path ="src/test/resources/testdata/info.pdf";
+        String title ="CUSTOMER INFORMATION";
         List<String > headers = new ArrayList<>();
         headers.add(first_name);
         headers.add(last_name);
         try {
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(path));
             document.open();
-            document.add( new Paragraph("                 "+title));
+            document.add( new Paragraph("          "+title));
             PdfPTable table = new PdfPTable(headers.size());
             table.setWidthPercentage(110);
             table.setSpacingBefore(30);
@@ -48,18 +48,26 @@ public class US_30_PdfCreation {
             table.setWidths(colWidth);
 
 
-            PdfPCell cell1 = new PdfPCell( new Phrase(headers.get(0)));
-            table.addCell(cell1);
-            PdfPCell cell2 = new PdfPCell(new Phrase(headers.get(1)));
-            table.addCell(cell2);
-            table.setHeaderRows(fnameList.size());
-
-            for (int i =0;i<fnameList.size();i++){
-                table.addCell(fnameList.get(i).toString());
-                table.addCell(lnameList.get(i).toString());
-
+//            PdfPCell cell1 = new PdfPCell( new Phrase(headers.get(0)));
+//            table.addCell(cell1);
+//            PdfPCell cell2 = new PdfPCell(new Phrase(headers.get(1)));
+//            table.addCell(cell2);
+//
+            for(int i = 0;i<headers.size();i++){
+                PdfPCell cell1 = new PdfPCell(new Phrase(headers.get(i)));
+                table.addCell(cell1);
             }
 
+            table.setHeaderRows(fnameList.size());
+//
+//            for (int i =0;i<fnameList.size();i++){
+//                table.addCell(fnameList.get(i).toString());
+//                table.addCell(lnameList.get(i).toString());
+//
+//            }
+            for (int i =1;i<fnameList.size();i++) {
+                document.add(new Paragraph("         "+fnameList.get(i).toString()+ "  " +lnameList.get(i).toString()));
+            }
 
             document.add(table);
             document.close();
