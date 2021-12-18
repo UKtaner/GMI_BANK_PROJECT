@@ -1,9 +1,10 @@
 @DBTesting
+
 Feature: Database testing
 
   Background:
     Given user creates a connection with db using "jdbc:postgresql://157.230.48.97:5432/gmibank_db" , "techprodb_user" and "Techpro_@126"
-
+  @demo
   Scenario Outline: TC_02901_user reads all users' info.
        Given user sends their query to db and gets related data "<query>" , columnName  "<columnName>" and next "<columnName2>"
     And user sets DB data into user file
