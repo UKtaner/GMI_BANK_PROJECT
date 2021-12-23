@@ -2,6 +2,7 @@ package gmibank.step_definitions.US08;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class CustomerPasswordChange_step_defs {
 
@@ -15,7 +16,7 @@ public class CustomerPasswordChange_step_defs {
 
     }
 
-    @Given("user activates user profiles menu from the main navigation")
+    @When("user activates user profiles menu from the main navigation")
     public void user_activates_user_profiles_menu_from_the_main_navigation() {
 
     }

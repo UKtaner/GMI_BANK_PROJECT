@@ -4,26 +4,38 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class StatePojo {
+public class States {
 
     private int id;
     private String name;
-    private String tpcountry;
 
+    private String tpcountry;
     /*{
     "id": 103694,
     "name": "xxxxxxxVirginiaxxxxx",
     "tpcountry": null
 }*/
 
-    public StatePojo() {
+    public States() {
     }
 
-    public StatePojo(int id, String name, String tpcountry) {
+    public States(int id, String name, String tpcountry) {
         this.id = id;
         this.name = name;
         this.tpcountry = tpcountry;
     }
+
+    private Country country;
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+
 
     public int getId() {
         return id;
@@ -40,6 +52,7 @@ public class StatePojo {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public String getTpcountry() {
         return tpcountry;
@@ -58,3 +71,5 @@ public class StatePojo {
                 '}';
     }
 }
+
+

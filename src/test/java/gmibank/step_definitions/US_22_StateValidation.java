@@ -1,7 +1,8 @@
 package gmibank.step_definitions;
 
-import gmibank.pojos.StatePojo;
+import gmibank.pojos.States;
 import gmibank.utilities.ConfigReader;
+import gmibank.utilities.ReusableMethods;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
 
@@ -11,17 +12,17 @@ import static io.restassured.RestAssured.given;
 
 public class US_22_StateValidation {
     Response response;
-    StatePojo actualData=new StatePojo();
+    States actualData=new States();
     @Given("User read the state from {string} and extension {string}")
     public void user_read_the_state_from_and_extension(String endpoint, String id) {
         response = given().headers(
                     "Authorization",
-                "Bearer " + ConfigReader.getProperty("api_bearer_token"))
+                "Bearer " + ReusableMethods.generateToken())
                 .when()
                 .get(endpoint+id);
         response.prettyPrint();
 
-        actualData = response.as(StatePojo.class);
+        actualData = response.as(States.class);
         System.out.println(actualData);
     }
     @Then("User validates the {string}")
